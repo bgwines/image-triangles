@@ -10,7 +10,7 @@ module Lib
 import Graphics.Image
 import qualified System.Random
 
-type Image_ = Image RPU RGB Double
+type Image_ = Image VU RGB Double
 type Point = (Int, Int)
 type Triangle = (Point, Point, Point)
 
