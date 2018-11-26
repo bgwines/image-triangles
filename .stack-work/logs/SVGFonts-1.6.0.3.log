@@ -1,0 +1,14 @@
+Configuring SVGFonts-1.6.0.3...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for SVGFonts-1.6.0.3..
+Building library for SVGFonts-1.6.0.3..
+[1 of 8] Compiling Graphics.SVGFonts.CharReference ( src/Graphics/SVGFonts/CharReference.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/SVGFonts/CharReference.o )
+[2 of 8] Compiling Graphics.SVGFonts.ReadPath ( src/Graphics/SVGFonts/ReadPath.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/SVGFonts/ReadPath.o )
+[3 of 8] Compiling Graphics.SVGFonts.ReadFont ( src/Graphics/SVGFonts/ReadFont.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/SVGFonts/ReadFont.o )
+[4 of 8] Compiling Graphics.SVGFonts.WriteFont ( src/Graphics/SVGFonts/WriteFont.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/SVGFonts/WriteFont.o )
+[5 of 8] Compiling Paths_SVGFonts   ( .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/autogen/Paths_SVGFonts.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Paths_SVGFonts.o )
+[6 of 8] Compiling Graphics.SVGFonts.Fonts ( src/Graphics/SVGFonts/Fonts.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/SVGFonts/Fonts.o )
+[7 of 8] Compiling Graphics.SVGFonts.Text ( src/Graphics/SVGFonts/Text.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/SVGFonts/Text.o )
+[8 of 8] Compiling Graphics.SVGFonts ( src/Graphics/SVGFonts.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/SVGFonts.o )
+Installing library in /Users/brett/code/image-triangles/.stack-work/install/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/SVGFonts-1.6.0.3-fG0nV641377S0nQjQR2M2
+Registering library for SVGFonts-1.6.0.3..

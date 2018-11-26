@@ -1,0 +1,25 @@
+[1 of 2] Compiling Main             ( /private/var/folders/l6/v2vhn_3j6bb1yvp6k5sh2hv80000gp/T/stack16879/intervals-0.8.1/Setup.lhs, /private/var/folders/l6/v2vhn_3j6bb1yvp6k5sh2hv80000gp/T/stack16879/intervals-0.8.1/.stack-work/dist/x86_64-osx/Cabal-2.2.0.1/setup/Main.o )
+[2 of 2] Compiling StackSetupShim   ( /Users/brett/.stack/setup-exe-src/setup-shim-mPHDZzAJ.hs, /private/var/folders/l6/v2vhn_3j6bb1yvp6k5sh2hv80000gp/T/stack16879/intervals-0.8.1/.stack-work/dist/x86_64-osx/Cabal-2.2.0.1/setup/StackSetupShim.o )
+Linking /private/var/folders/l6/v2vhn_3j6bb1yvp6k5sh2hv80000gp/T/stack16879/intervals-0.8.1/.stack-work/dist/x86_64-osx/Cabal-2.2.0.1/setup/setup ...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Configuring intervals-0.8.1...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for intervals-0.8.1..
+Building library for intervals-0.8.1..
+[1 of 6] Compiling Numeric.Interval.Exception ( src/Numeric/Interval/Exception.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Numeric/Interval/Exception.o )
+[2 of 6] Compiling Numeric.Interval.Internal ( src/Numeric/Interval/Internal.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Numeric/Interval/Internal.o )
+[3 of 6] Compiling Numeric.Interval ( src/Numeric/Interval.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Numeric/Interval.o )
+[4 of 6] Compiling Numeric.Interval.Kaucher ( src/Numeric/Interval/Kaucher.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Numeric/Interval/Kaucher.o )
+[5 of 6] Compiling Numeric.Interval.NonEmpty.Internal ( src/Numeric/Interval/NonEmpty/Internal.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Numeric/Interval/NonEmpty/Internal.o )
+
+[;1msrc/Numeric/Interval/NonEmpty/Internal.hs:63:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Numeric.Interval.Exception’ is redundant
+      except perhaps to import instances from ‘Numeric.Interval.Exception’
+    To import instances alone, use: import Numeric.Interval.Exception()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m63 |[0m[0m [;1m[35mimport Numeric.Interval.Exception[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[6 of 6] Compiling Numeric.Interval.NonEmpty ( src/Numeric/Interval/NonEmpty.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Numeric/Interval/NonEmpty.o )
+Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/intervals-0.8.1-DePxuYAAcIoCgglETR1Kl2
+Registering library for intervals-0.8.1..

@@ -1,0 +1,565 @@
+Configuring hip-1.5.3.0...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for hip-1.5.3.0..
+Building library for hip-1.5.3.0..
+[ 1 of 37] Compiling Graphics.Image.Interface.Elevator ( src/Graphics/Image/Interface/Elevator.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Interface/Elevator.o )
+[ 2 of 37] Compiling Graphics.Image.Interface ( src/Graphics/Image/Interface.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Interface.o )
+[ 3 of 37] Compiling Graphics.Image.ColorSpace.YCbCr ( src/Graphics/Image/ColorSpace/YCbCr.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/ColorSpace/YCbCr.o )
+[ 4 of 37] Compiling Graphics.Image.ColorSpace.Y ( src/Graphics/Image/ColorSpace/Y.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/ColorSpace/Y.o )
+[ 5 of 37] Compiling Graphics.Image.ColorSpace.RGB ( src/Graphics/Image/ColorSpace/RGB.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/ColorSpace/RGB.o )
+[ 6 of 37] Compiling Graphics.Image.ColorSpace.HSI ( src/Graphics/Image/ColorSpace/HSI.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/ColorSpace/HSI.o )
+[ 7 of 37] Compiling Graphics.Image.ColorSpace.Complex ( src/Graphics/Image/ColorSpace/Complex.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/ColorSpace/Complex.o )
+[ 8 of 37] Compiling Graphics.Image.ColorSpace.CMYK ( src/Graphics/Image/ColorSpace/CMYK.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/ColorSpace/CMYK.o )
+[ 9 of 37] Compiling Graphics.Image.Interface.Vector.Unboxing ( src/Graphics/Image/Interface/Vector/Unboxing.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Interface/Vector/Unboxing.o )
+[10 of 37] Compiling Graphics.Image.Processing.Interpolation ( src/Graphics/Image/Processing/Interpolation.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Processing/Interpolation.o )
+[11 of 37] Compiling Graphics.Image.Processing.Geometric ( src/Graphics/Image/Processing/Geometric.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Processing/Geometric.o )
+[12 of 37] Compiling Graphics.Image.Processing.Complex.Fourier ( src/Graphics/Image/Processing/Complex/Fourier.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Processing/Complex/Fourier.o )
+
+[;1msrc/Graphics/Image/Processing/Complex/Fourier.hs:29:8: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘Fractional (Pixel cs (Complex e))’
+        matches an instance declaration
+      instance (ColorSpace cs e, Fractional e) => Fractional (Pixel cs e)
+        -- Defined at src/Graphics/Image/Interface.hs:561:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the type signature:
+        fft :: (Applicative (Pixel cs),
+                Array arr cs (Complex e),
+                ColorSpace cs e,
+                Fractional (Pixel cs (Complex e)),
+                Floating (Pixel cs e),
+                RealFloat e) =>
+               Image arr cs (Complex e) -> Image arr cs (Complex e)[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m29 |[0m[0m fft :: [;1m[35m(Applicative (Pixel cs),[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m        ^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/Processing/Complex/Fourier.hs:29:8: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘Floating (Pixel cs e)’
+        matches an instance declaration
+      instance (ColorSpace cs e, Floating e) => Floating (Pixel cs e)
+        -- Defined at src/Graphics/Image/Interface.hs:570:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the type signature:
+        fft :: (Applicative (Pixel cs),
+                Array arr cs (Complex e),
+                ColorSpace cs e,
+                Fractional (Pixel cs (Complex e)),
+                Floating (Pixel cs e),
+                RealFloat e) =>
+               Image arr cs (Complex e) -> Image arr cs (Complex e)[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m29 |[0m[0m fft :: [;1m[35m(Applicative (Pixel cs),[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m        ^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/Processing/Complex/Fourier.hs:39:9: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘Fractional (Pixel cs (Complex e))’
+        matches an instance declaration
+      instance (ColorSpace cs e, Fractional e) => Fractional (Pixel cs e)
+        -- Defined at src/Graphics/Image/Interface.hs:561:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the type signature:
+        ifft :: (Applicative (Pixel cs),
+                 Array arr cs (Complex e),
+                 ColorSpace cs e,
+                 Fractional (Pixel cs (Complex e)),
+                 Floating (Pixel cs e),
+                 RealFloat e) =>
+                Image arr cs (Complex e) -> Image arr cs (Complex e)[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m39 |[0m[0m ifft :: [;1m[35m(Applicative (Pixel cs),[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m         ^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/Processing/Complex/Fourier.hs:39:9: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘Floating (Pixel cs e)’
+        matches an instance declaration
+      instance (ColorSpace cs e, Floating e) => Floating (Pixel cs e)
+        -- Defined at src/Graphics/Image/Interface.hs:570:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the type signature:
+        ifft :: (Applicative (Pixel cs),
+                 Array arr cs (Complex e),
+                 ColorSpace cs e,
+                 Fractional (Pixel cs (Complex e)),
+                 Floating (Pixel cs e),
+                 RealFloat e) =>
+                Image arr cs (Complex e) -> Image arr cs (Complex e)[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m39 |[0m[0m ifft :: [;1m[35m(Applicative (Pixel cs),[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m         ^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/Processing/Complex/Fourier.hs:61:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘Fractional (Pixel cs (Complex e))’
+        matches an instance declaration
+      instance (ColorSpace cs e, Fractional e) => Fractional (Pixel cs e)
+        -- Defined at src/Graphics/Image/Interface.hs:561:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the type signature:
+        fft2d :: (Applicative (Pixel cs),
+                  Array arr cs (Complex e),
+                  ColorSpace cs e,
+                  Fractional (Pixel cs (Complex e)),
+                  Floating (Pixel cs e),
+                  RealFloat e) =>
+                 Mode -> Image arr cs (Complex e) -> Image arr cs (Complex e)[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m61 |[0m[0m fft2d :: [;1m[35m(Applicative (Pixel cs),[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/Processing/Complex/Fourier.hs:61:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘Floating (Pixel cs e)’
+        matches an instance declaration
+      instance (ColorSpace cs e, Floating e) => Floating (Pixel cs e)
+        -- Defined at src/Graphics/Image/Interface.hs:570:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the type signature:
+        fft2d :: (Applicative (Pixel cs),
+                  Array arr cs (Complex e),
+                  ColorSpace cs e,
+                  Fractional (Pixel cs (Complex e)),
+                  Floating (Pixel cs e),
+                  RealFloat e) =>
+                 Mode -> Image arr cs (Complex e) -> Image arr cs (Complex e)[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m61 |[0m[0m fft2d :: [;1m[35m(Applicative (Pixel cs),[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/Processing/Complex/Fourier.hs:87:6: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘Floating (Pixel cs e)’
+        matches an instance declaration
+      instance (ColorSpace cs e, Floating e) => Floating (Pixel cs e)
+        -- Defined at src/Graphics/Image/Interface.hs:570:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the type signature:
+        fftGeneral :: forall arr cs e.
+                      (Applicative (Pixel cs),
+                       Array arr cs (Complex e),
+                       ColorSpace cs e,
+                       Floating (Pixel cs e),
+                       RealFloat e) =>
+                      Pixel cs e -> Image arr cs (Complex e) -> Image arr cs (Complex e)[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m87 |[0m[0m   :: [;1m[35mforall arr cs e.[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m      ^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/Processing/Complex/Fourier.hs:130:12: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘Floating (Pixel cs e)’
+        matches an instance declaration
+      instance (ColorSpace cs e, Floating e) => Floating (Pixel cs e)
+        -- Defined at src/Graphics/Image/Interface.hs:570:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the type signature:
+        twiddle :: (Applicative (Pixel cs), Floating (Pixel cs e)) =>
+                   Pixel cs e -> Int -> Int -> Pixel cs (Complex e)[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m130 |[0m[0m twiddle :: [;1m[35m(Applicative (Pixel cs), Floating (Pixel cs e)) =>[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m[13 of 37] Compiling Graphics.Image.Processing.Complex ( src/Graphics/Image/Processing/Complex.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Processing/Complex.o )
+[14 of 37] Compiling Graphics.Image.Utils ( src/Graphics/Image/Utils.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Utils.o )
+[15 of 37] Compiling Graphics.Image.Interface.Vector.Generic ( src/Graphics/Image/Interface/Vector/Generic.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Interface/Vector/Generic.o )
+[16 of 37] Compiling Graphics.Image.Interface.Vector.Unboxed ( src/Graphics/Image/Interface/Vector/Unboxed.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Interface/Vector/Unboxed.o )
+[17 of 37] Compiling Graphics.Image.Interface.Vector.Storable ( src/Graphics/Image/Interface/Vector/Storable.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Interface/Vector/Storable.o )
+[18 of 37] Compiling Graphics.Image.Interface.Vector ( src/Graphics/Image/Interface/Vector.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Interface/Vector.o )
+[19 of 37] Compiling Graphics.Image.ColorSpace.X ( src/Graphics/Image/ColorSpace/X.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/ColorSpace/X.o )
+[20 of 37] Compiling Graphics.Image.ColorSpace.Binary ( src/Graphics/Image/ColorSpace/Binary.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/ColorSpace/Binary.o )
+[21 of 37] Compiling Graphics.Image.Interface.Repa.Generic ( src/Graphics/Image/Interface/Repa/Generic.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Interface/Repa/Generic.o )
+[22 of 37] Compiling Graphics.Image.Interface.Repa.Unboxed ( src/Graphics/Image/Interface/Repa/Unboxed.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Interface/Repa/Unboxed.o )
+[23 of 37] Compiling Graphics.Image.Interface.Repa.Storable ( src/Graphics/Image/Interface/Repa/Storable.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Interface/Repa/Storable.o )
+[24 of 37] Compiling Graphics.Image.Interface.Repa ( src/Graphics/Image/Interface/Repa.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Interface/Repa.o )
+[25 of 37] Compiling Graphics.Image.ColorSpace ( src/Graphics/Image/ColorSpace.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/ColorSpace.o )
+
+[;1msrc/Graphics/Image/ColorSpace.hs:257:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToY Y e’ matches an instance declaration
+      instance Elevator e => ToY Y e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:192:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToY Y e
+      While checking an instance declaration
+      In the instance declaration for ‘ToYA Y e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m257 |[0m[0m instance [;1m[35mToY Y e => ToYA Y e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:263:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToY RGB e’ matches an instance declaration
+      instance Elevator e => ToY RGB e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:201:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToY RGB e
+      While checking an instance declaration
+      In the instance declaration for ‘ToYA RGB e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m263 |[0m[0m instance [;1m[35mToY RGB e => ToYA RGB e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:281:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToY YCbCr e’ matches an instance declaration
+      instance Elevator e => ToY YCbCr e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:225:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToY YCbCr e
+      While checking an instance declaration
+      In the instance declaration for ‘ToYA YCbCr e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m281 |[0m[0m instance [;1m[35mToY YCbCr e => ToYA YCbCr e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:398:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToRGB Y e’ matches an instance declaration
+      instance Elevator e => ToRGB Y e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:308:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToRGB Y e
+      While checking an instance declaration
+      In the instance declaration for ‘ToRGBA Y e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m398 |[0m[0m instance [;1m[35mToRGB Y e => ToRGBA Y e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:404:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToRGB RGB e’ matches an instance declaration
+      instance Elevator e => ToRGB RGB e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:316:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToRGB RGB e
+      While checking an instance declaration
+      In the instance declaration for ‘ToRGBA RGB e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m404 |[0m[0m instance [;1m[35mToRGB RGB e => ToRGBA RGB e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:410:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToRGB HSI e’ matches an instance declaration
+      instance Elevator e => ToRGB HSI e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:324:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToRGB HSI e
+      While checking an instance declaration
+      In the instance declaration for ‘ToRGBA HSI e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m410 |[0m[0m instance [;1m[35mToRGB HSI e => ToRGBA HSI e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:416:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToRGB CMYK e’ matches an instance declaration
+      instance Elevator e => ToRGB CMYK e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:366:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToRGB CMYK e
+      While checking an instance declaration
+      In the instance declaration for ‘ToRGBA CMYK e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m416 |[0m[0m instance [;1m[35mToRGB CMYK e => ToRGBA CMYK e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:422:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToRGB YCbCr e’ matches an instance declaration
+      instance Elevator e => ToRGB YCbCr e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:355:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToRGB YCbCr e
+      While checking an instance declaration
+      In the instance declaration for ‘ToRGBA YCbCr e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m422 |[0m[0m instance [;1m[35mToRGB YCbCr e => ToRGBA YCbCr e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:510:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToHSI Y e’ matches an instance declaration
+      instance Elevator e => ToHSI Y e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:445:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToHSI Y e
+      While checking an instance declaration
+      In the instance declaration for ‘ToHSIA Y e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m510 |[0m[0m instance [;1m[35mToHSI Y e => ToHSIA Y e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:516:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToHSI RGB e’ matches an instance declaration
+      instance Elevator e => ToHSI RGB e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:453:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToHSI RGB e
+      While checking an instance declaration
+      In the instance declaration for ‘ToHSIA RGB e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m516 |[0m[0m instance [;1m[35mToHSI RGB e => ToHSIA RGB e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:522:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToHSI HSI e’ matches an instance declaration
+      instance Elevator e => ToHSI HSI e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:467:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToHSI HSI e
+      While checking an instance declaration
+      In the instance declaration for ‘ToHSIA HSI e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m522 |[0m[0m instance [;1m[35mToHSI HSI e => ToHSIA HSI e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:528:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToHSI CMYK e’ matches an instance declaration
+      instance Elevator e => ToHSI CMYK e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:483:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToHSI CMYK e
+      While checking an instance declaration
+      In the instance declaration for ‘ToHSIA CMYK e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m528 |[0m[0m instance [;1m[35mToHSI CMYK e => ToHSIA CMYK e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:534:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToHSI YCbCr e’ matches an instance declaration
+      instance Elevator e => ToHSI YCbCr e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:475:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToHSI YCbCr e
+      While checking an instance declaration
+      In the instance declaration for ‘ToHSIA YCbCr e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m534 |[0m[0m instance [;1m[35mToHSI YCbCr e => ToHSIA YCbCr e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:621:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToCMYK Y e’ matches an instance declaration
+      instance Elevator e => ToCMYK Y e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:558:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToCMYK Y e
+      While checking an instance declaration
+      In the instance declaration for ‘ToCMYKA Y e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m621 |[0m[0m instance [;1m[35mToCMYK Y e => ToCMYKA Y e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:627:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToCMYK RGB e’ matches an instance declaration
+      instance Elevator e => ToCMYK RGB e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:566:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToCMYK RGB e
+      While checking an instance declaration
+      In the instance declaration for ‘ToCMYKA RGB e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m627 |[0m[0m instance [;1m[35mToCMYK RGB e => ToCMYKA RGB e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:633:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToCMYK HSI e’ matches an instance declaration
+      instance Elevator e => ToCMYK HSI e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:578:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToCMYK HSI e
+      While checking an instance declaration
+      In the instance declaration for ‘ToCMYKA HSI e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m633 |[0m[0m instance [;1m[35mToCMYK HSI e => ToCMYKA HSI e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:639:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToCMYK CMYK e’ matches an instance declaration
+      instance Elevator e => ToCMYK CMYK e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:586:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToCMYK CMYK e
+      While checking an instance declaration
+      In the instance declaration for ‘ToCMYKA CMYK e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m639 |[0m[0m instance [;1m[35mToCMYK CMYK e => ToCMYKA CMYK e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:645:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToCMYK YCbCr e’ matches an instance declaration
+      instance Elevator e => ToCMYK YCbCr e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:594:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToCMYK YCbCr e
+      While checking an instance declaration
+      In the instance declaration for ‘ToCMYKA YCbCr e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m645 |[0m[0m instance [;1m[35mToCMYK YCbCr e => ToCMYKA YCbCr e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:735:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToYCbCr Y e’ matches an instance declaration
+      instance Elevator e => ToYCbCr Y e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:671:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToYCbCr Y e
+      While checking an instance declaration
+      In the instance declaration for ‘ToYCbCrA Y e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m735 |[0m[0m instance [;1m[35mToYCbCr Y e => ToYCbCrA Y e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:741:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToYCbCr RGB e’ matches an instance declaration
+      instance Elevator e => ToYCbCr RGB e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:679:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToYCbCr RGB e
+      While checking an instance declaration
+      In the instance declaration for ‘ToYCbCrA RGB e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m741 |[0m[0m instance [;1m[35mToYCbCr RGB e => ToYCbCrA RGB e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:744:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToYCbCr HSI e’ matches an instance declaration
+      instance Elevator e => ToYCbCr HSI e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:690:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToYCbCr HSI e
+      While checking an instance declaration
+      In the instance declaration for ‘ToYCbCrA HSI e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m744 |[0m[0m instance [;1m[35mToYCbCr HSI e => ToYCbCrA HSI e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:754:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToYCbCr CMYK e’ matches an instance declaration
+      instance Elevator e => ToYCbCr CMYK e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:706:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToYCbCr CMYK e
+      While checking an instance declaration
+      In the instance declaration for ‘ToYCbCrA CMYK e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m754 |[0m[0m instance [;1m[35mToYCbCr CMYK e => ToYCbCrA CMYK e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/ColorSpace.hs:760:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘ToYCbCr YCbCr e’ matches an instance declaration
+      instance Elevator e => ToYCbCr YCbCr e
+        -- Defined at src/Graphics/Image/ColorSpace.hs:698:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the context: ToYCbCr YCbCr e
+      While checking an instance declaration
+      In the instance declaration for ‘ToYCbCrA YCbCr e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m760 |[0m[0m instance [;1m[35mToYCbCr YCbCr e => ToYCbCrA YCbCr e[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[26 of 37] Compiling Graphics.Image.Processing.Convolution ( src/Graphics/Image/Processing/Convolution.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Processing/Convolution.o )
+[27 of 37] Compiling Graphics.Image.Processing.Filter ( src/Graphics/Image/Processing/Filter.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Processing/Filter.o )
+[28 of 37] Compiling Graphics.Image.Processing ( src/Graphics/Image/Processing.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Processing.o )
+[29 of 37] Compiling Graphics.Image.Processing.Binary ( src/Graphics/Image/Processing/Binary.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Processing/Binary.o )
+[30 of 37] Compiling Graphics.Image.IO.Base ( src/Graphics/Image/IO/Base.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/IO/Base.o )
+[31 of 37] Compiling Graphics.Image.IO.Formats.Netpbm ( src/Graphics/Image/IO/Formats/Netpbm.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/IO/Formats/Netpbm.o )
+[32 of 37] Compiling Graphics.Image.IO.Formats.JuicyPixels ( src/Graphics/Image/IO/Formats/JuicyPixels.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/IO/Formats/JuicyPixels.o )
+[33 of 37] Compiling Graphics.Image.IO.Formats ( src/Graphics/Image/IO/Formats.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/IO/Formats.o )
+[34 of 37] Compiling Graphics.Image.Types ( src/Graphics/Image/Types.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/Types.o )
+[35 of 37] Compiling Graphics.Image.IO ( src/Graphics/Image/IO.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/IO.o )
+
+[;1msrc/Graphics/Image/IO.hs:91:14: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘Array VS cs e’ matches an instance declaration
+      instance (MArray VS cs e, BaseArray VS cs e) => Array VS cs e
+        -- Defined at src/Graphics/Image/Interface/Vector/Storable.hs:53:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the type signature:
+        readImage :: forall arr cs e.
+                     (Array VS cs e,
+                      Array arr cs e,
+                      Readable (Image VS cs e) InputFormat) =>
+                     FilePath -> IO (Either String (Image arr cs e))[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m91 |[0m[0m readImage :: [;1m[35mforall arr cs e .[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m              ^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/IO.hs:111:15: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘Array VS cs e’ matches an instance declaration
+      instance (MArray VS cs e, BaseArray VS cs e) => Array VS cs e
+        -- Defined at src/Graphics/Image/Interface/Vector/Storable.hs:53:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the type signature:
+        readImage' :: (Array VS cs e,
+                       Array arr cs e,
+                       Readable (Image VS cs e) InputFormat) =>
+                      FilePath -> IO (Image arr cs e)[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m111 |[0m[0m readImage' :: [;1m[35m(Array VS cs e, Array arr cs e,[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/IO.hs:161:15: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘Array VS cs e’ matches an instance declaration
+      instance (MArray VS cs e, BaseArray VS cs e) => Array VS cs e
+        -- Defined at src/Graphics/Image/Interface/Vector/Storable.hs:53:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the type signature:
+        writeImage :: (Array VS cs e,
+                       Array arr cs e,
+                       Writable (Image VS cs e) OutputFormat) =>
+                      FilePath -> Image arr cs e -> IO ()[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m161 |[0m[0m writeImage :: [;1m[35m(Array VS cs e, Array arr cs e,[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/IO.hs:190:22: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘Array VS cs e’ matches an instance declaration
+      instance (MArray VS cs e, BaseArray VS cs e) => Array VS cs e
+        -- Defined at src/Graphics/Image/Interface/Vector/Storable.hs:53:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the type signature:
+        displayImageUsing :: (Array VS cs e,
+                              Array arr cs e,
+                              Writable (Image VS cs e) TIF) =>
+                             ExternalViewer -> Bool -> Image arr cs e -> IO ()[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m190 |[0m[0m displayImageUsing :: [;1m[35m(Array VS cs e, Array arr cs e,[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1msrc/Graphics/Image/IO.hs:222:17: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wsimplifiable-class-constraints[0m[0m[;1m][0m[0m[;1m
+    • The constraint ‘Array VS cs e’ matches an instance declaration
+      instance (MArray VS cs e, BaseArray VS cs e) => Array VS cs e
+        -- Defined at src/Graphics/Image/Interface/Vector/Storable.hs:53:10
+      This makes type inference for inner bindings fragile;
+        either use MonoLocalBinds, or simplify it using the instance
+    • In the type signature:
+        displayImage :: (Array VS cs e,
+                         Array arr cs e,
+                         Writable (Image VS cs e) TIF) =>
+                        Image arr cs e -> IO ()[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m222 |[0m[0m displayImage :: [;1m[35m(Array VS cs e, Array arr cs e,[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m[36 of 37] Compiling Graphics.Image.IO.Histogram ( src/Graphics/Image/IO/Histogram.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image/IO/Histogram.o )
+[37 of 37] Compiling Graphics.Image   ( src/Graphics/Image.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Image.o )
+Installing library in /Users/brett/code/image-triangles/.stack-work/install/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/hip-1.5.3.0-6W0kwpuK1By8h7TKiprsj5
+Registering library for hip-1.5.3.0..

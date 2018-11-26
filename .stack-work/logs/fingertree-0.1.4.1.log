@@ -1,0 +1,9 @@
+Configuring fingertree-0.1.4.1...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for fingertree-0.1.4.1..
+Building library for fingertree-0.1.4.1..
+[1 of 3] Compiling Data.FingerTree  ( Data/FingerTree.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/FingerTree.o )
+[2 of 3] Compiling Data.IntervalMap.FingerTree ( Data/IntervalMap/FingerTree.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/IntervalMap/FingerTree.o )
+[3 of 3] Compiling Data.PriorityQueue.FingerTree ( Data/PriorityQueue/FingerTree.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/PriorityQueue/FingerTree.o )
+Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/fingertree-0.1.4.1-6WvyT9gWE8ZI0EEUYa23Qt
+Registering library for fingertree-0.1.4.1..

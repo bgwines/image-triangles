@@ -1,0 +1,8 @@
+Configuring newtype-generics-0.5.3...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for newtype-generics-0.5.3..
+Building library for newtype-generics-0.5.3..
+[1 of 2] Compiling Control.Newtype.Generics ( Control/Newtype/Generics.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Control/Newtype/Generics.o )
+[2 of 2] Compiling Control.Newtype  ( Control/Newtype.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Control/Newtype.o )
+Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/newtype-generics-0.5.3-J2pN5ieujal7RHm5vGEQTD
+Registering library for newtype-generics-0.5.3..

@@ -1,0 +1,7 @@
+Configuring integration-0.2.1...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for integration-0.2.1..
+Building library for integration-0.2.1..
+[1 of 1] Compiling Numeric.Integration.TanhSinh ( src/Numeric/Integration/TanhSinh.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Numeric/Integration/TanhSinh.o )
+Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/integration-0.2.1-KA8ldBWYF6ZIU7B1S9qhBp
+Registering library for integration-0.2.1..

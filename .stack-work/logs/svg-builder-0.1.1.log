@@ -1,0 +1,11 @@
+Configuring svg-builder-0.1.1...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for svg-builder-0.1.1..
+Building library for svg-builder-0.1.1..
+[1 of 5] Compiling Graphics.Svg.Core ( src/Graphics/Svg/Core.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Svg/Core.o )
+[2 of 5] Compiling Graphics.Svg.Attributes ( src/Graphics/Svg/Attributes.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Svg/Attributes.o )
+[3 of 5] Compiling Graphics.Svg.Elements ( src/Graphics/Svg/Elements.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Svg/Elements.o )
+[4 of 5] Compiling Graphics.Svg.Path ( src/Graphics/Svg/Path.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Svg/Path.o )
+[5 of 5] Compiling Graphics.Svg     ( src/Graphics/Svg.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Svg.o )
+Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/svg-builder-0.1.1-JFYqvJ9Fbup2isJSrTJBou
+Registering library for svg-builder-0.1.1..

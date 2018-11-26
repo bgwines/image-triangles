@@ -1,0 +1,294 @@
+Configuring fast-math-1.0.2...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for fast-math-1.0.2..
+Building library for fast-math-1.0.2..
+[1 of 4] Compiling Numeric.FastMath.Approximation ( Numeric/FastMath/Approximation.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Numeric/FastMath/Approximation.o )
+
+[;1mNumeric/FastMath/Approximation.hs:19:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Prelude’ is redundant
+      except perhaps to import instances from ‘Prelude’
+    To import instances alone, use: import Prelude()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m19 |[0m[0m [;1m[35mimport Prelude[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:32:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double *,+ distribute A" may never fire
+      because rule "*##" for ‘*##’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m32 |[0m[0m [;1m[35m"double *,+ distribute A" forall x y1 y2. (x *## y1) +## (x *## y2) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:35:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double *,+ distribute B" may never fire
+      because rule "*##" for ‘*##’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m35 |[0m[0m [;1m[35m"double *,+ distribute B" forall x y1 y2. (y1 *## x) +## (x *## y2) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:38:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double *,+ distribute C" may never fire
+      because rule "*##" for ‘*##’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m38 |[0m[0m [;1m[35m"double *,+ distribute C" forall x y1 y2. (y1 *## x) +## (y2 *## x) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:41:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double *,+ distribute D" may never fire
+      because rule "*##" for ‘*##’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m41 |[0m[0m [;1m[35m"double *,+ distribute D" forall x y1 y2. (x *## y1) +## (y2 *## x) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:46:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double *,- distribute A" may never fire
+      because rule "*##" for ‘*##’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m46 |[0m[0m [;1m[35m"double *,- distribute A" forall x y1 y2. (x *## y1) -## (x *## y2) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:49:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double *,- distribute B" may never fire
+      because rule "*##" for ‘*##’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m49 |[0m[0m [;1m[35m"double *,- distribute B" forall x y1 y2. (y1 *## x) -## (x *## y2) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:52:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double *,- distribute C" may never fire
+      because rule "*##" for ‘*##’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m52 |[0m[0m [;1m[35m"double *,- distribute C" forall x y1 y2. (y1 *## x) -## (y2 *## x) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:55:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double *,- distribute D" may never fire
+      because rule "*##" for ‘*##’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m55 |[0m[0m [;1m[35m"double *,- distribute D" forall x y1 y2. (x *## y1) -## (y2 *## x) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:60:1: [;1m[35mwarning:[0m[0m[;1m[0m[0m[;1m
+    RULE left-hand side too complicated to desugar
+      Optimised lhs: case /## y2 x of wild_00 { __DEFAULT ->
+                     (case /## y1 x of wild_X2 { __DEFAULT -> +## wild_X2 }) wild_00
+                     }
+      Orig lhs: case /## y2 x of wild_00 { __DEFAULT ->
+                (case /## y1 x of wild_00 { __DEFAULT -> +## wild_00 }) wild_00
+                }[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m60 |[0m[0m [;1m[35m"double /,+ distribute" forall x y1 y2. (y1 /## x) +## (y2 /## x) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:63:1: [;1m[35mwarning:[0m[0m[;1m[0m[0m[;1m
+    RULE left-hand side too complicated to desugar
+      Optimised lhs: case /## y2 x of wild_00 { __DEFAULT ->
+                     (case /## y1 x of wild_X2 { __DEFAULT -> -## wild_X2 }) wild_00
+                     }
+      Orig lhs: case /## y2 x of wild_00 { __DEFAULT ->
+                (case /## y1 x of wild_00 { __DEFAULT -> -## wild_00 }) wild_00
+                }[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m63 |[0m[0m [;1m[35m"double /,- distribute" forall x y1 y2. (y1 /## x) -## (y2 /## x) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:72:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "float *,+ distribute A" may never fire
+      because rule "timesFloat#" for ‘timesFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m72 |[0m[0m [;1m[35m"float *,+ distribute A" forall x y1 y2. (x `timesFloat#` y1) `plusFloat#` (x `timesFloat#` y2) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:75:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "float *,+ distribute B" may never fire
+      because rule "timesFloat#" for ‘timesFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m75 |[0m[0m [;1m[35m"float *,+ distribute B" forall x y1 y2. (y1 `timesFloat#` x) `plusFloat#` (x `timesFloat#` y2) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:78:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "float *,+ distribute C" may never fire
+      because rule "timesFloat#" for ‘timesFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m78 |[0m[0m [;1m[35m"float *,+ distribute C" forall x y1 y2. (y1 `timesFloat#` x) `plusFloat#` (y2 `timesFloat#` x) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:81:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "float *,+ distribute D" may never fire
+      because rule "timesFloat#" for ‘timesFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m81 |[0m[0m [;1m[35m"float *,+ distribute D" forall x y1 y2. (x `timesFloat#` y1) `plusFloat#` (y2 `timesFloat#` x) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:86:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "float *,- distribute A" may never fire
+      because rule "timesFloat#" for ‘timesFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m86 |[0m[0m [;1m[35m"float *,- distribute A" forall x y1 y2. (x `timesFloat#` y1) `minusFloat#` (x `timesFloat#` y2) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:89:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "float *,- distribute B" may never fire
+      because rule "timesFloat#" for ‘timesFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m89 |[0m[0m [;1m[35m"float *,- distribute B" forall x y1 y2. (y1 `timesFloat#` x) `minusFloat#` (x `timesFloat#` y2) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:92:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "float *,- distribute C" may never fire
+      because rule "timesFloat#" for ‘timesFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m92 |[0m[0m [;1m[35m"float *,- distribute C" forall x y1 y2. (y1 `timesFloat#` x) `minusFloat#` (y2 `timesFloat#` x) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:95:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "float *,- distribute D" may never fire
+      because rule "timesFloat#" for ‘timesFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m95 |[0m[0m [;1m[35m"float *,- distribute D" forall x y1 y2. (x `timesFloat#` y1) `minusFloat#` (y2 `timesFloat#` x) [0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:100:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "float /,+ distribute" may never fire
+      because rule "timesFloat#" for ‘timesFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m100 |[0m[0m [;1m[35m"float /,+ distribute" forall x y1 y2. (y1 `timesFloat#` x) `plusFloat#` (y2 `timesFloat#` x) [0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:103:1: [;1m[35mwarning:[0m[0m[;1m[0m[0m[;1m
+    RULE left-hand side too complicated to desugar
+      Optimised lhs: case divideFloat# y2 x of wild_00 { __DEFAULT ->
+                     (case divideFloat# y1 x of wild_X2 { __DEFAULT ->
+                      minusFloat# wild_X2
+                      })
+                       wild_00
+                     }
+      Orig lhs: case divideFloat# y2 x of wild_00 { __DEFAULT ->
+                (case divideFloat# y1 x of wild_00 { __DEFAULT ->
+                 minusFloat# wild_00
+                 })
+                  wild_00
+                }[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m103 |[0m[0m [;1m[35m"float /,- distribute" forall x y1 y2. (y1 `divideFloat#` x) `minusFloat#` (y2 `divideFloat#` x) [0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:165:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double commute left *" may never fire
+      because rule "*##" for ‘*##’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m165 |[0m[0m [;1m[35m"double commute left *"   [~2] forall x1 x2 x3. (*##) x1 ((*##) x2 x3) = (*##) ((*##) x2 x3) x1[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:166:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double associate left *" may never fire
+      because rule "*##" for ‘*##’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m166 |[0m[0m [;1m[35m"double associate left *" [~1] forall x1 x2 x3. (*##) x1 ((*##) x2 x3) = (*##) ((*##) x1 x2) x3[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:168:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double commute left +" may never fire
+      because rule "+##" for ‘+##’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m168 |[0m[0m [;1m[35m"double commute left +"   [~2] forall x1 x2 x3. (+##) x1 ((+##) x2 x3) = (+##) ((+##) x2 x3) x1[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:169:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double associate left +" may never fire
+      because rule "+##" for ‘+##’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m169 |[0m[0m [;1m[35m"double associate left +" [~1] forall x1 x2 x3. (+##) x1 ((+##) x2 x3) = (+##) ((+##) x1 x2) x3[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:175:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "float commute left *" may never fire
+      because rule "timesFloat#" for ‘timesFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m175 |[0m[0m [;1m[35m"float commute left *"   [~2] forall x1 x2 x3. timesFloat# x1 (timesFloat# x2 x3) = timesFloat# (timesFloat# x2 x3) x1[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:176:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "float associate left *" may never fire
+      because rule "timesFloat#" for ‘timesFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m176 |[0m[0m [;1m[35m"float associate left *" [~1] forall x1 x2 x3. timesFloat# x1 (timesFloat# x2 x3) = timesFloat# (timesFloat# x1 x2) x3[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:178:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "float commute left +" may never fire
+      because rule "plusFloat#" for ‘plusFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m178 |[0m[0m [;1m[35m"float commute left +"   [~2] forall x1 x2 x3. plusFloat# x1 (plusFloat# x2 x3) = plusFloat# (plusFloat# x2 x3) x1[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:179:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "float associate left +" may never fire
+      because rule "plusFloat#" for ‘plusFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m179 |[0m[0m [;1m[35m"float associate left +" [~1] forall x1 x2 x3. plusFloat# x1 (plusFloat# x2 x3) = plusFloat# (plusFloat# x1 x2) x3[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:191:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double repmul 4" may never fire
+      because rule "*##" for ‘*##’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m191 |[0m[0m [;1m[35m"double repmul 4" [1] forall x . ((x *## x) *## x) *## x [0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath/Approximation.hs:210:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Winline-rule-shadowing[0m[0m[;1m][0m[0m[;1m
+    Rule "double repmul 4" may never fire
+      because rule "timesFloat#" for ‘timesFloat#’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m210 |[0m[0m [;1m[35m"double repmul 4" [1] forall x . timesFloat# x (timesFloat# x (timesFloat# x x))[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m[2 of 4] Compiling Numeric.FastMath.NaN ( Numeric/FastMath/NaN.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Numeric/FastMath/NaN.o )
+[3 of 4] Compiling Numeric.FastMath.SignedZeros ( Numeric/FastMath/SignedZeros.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Numeric/FastMath/SignedZeros.o )
+[4 of 4] Compiling Numeric.FastMath ( Numeric/FastMath.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Numeric/FastMath.o )
+
+[;1mNumeric/FastMath.hs:10:7: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdodgy-exports[0m[0m[;1m][0m[0m[;1m
+    The export item ‘module Numeric.FastMath.Approximation’ exports nothing[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m10 |[0m[0m     ( [;1m[35mmodule Numeric.FastMath.Approximation[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath.hs:11:7: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdodgy-exports[0m[0m[;1m][0m[0m[;1m
+    The export item ‘module Numeric.FastMath.NaN’ exports nothing[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m11 |[0m[0m     , [;1m[35mmodule Numeric.FastMath.NaN[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m       ^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mNumeric/FastMath.hs:12:7: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdodgy-exports[0m[0m[;1m][0m[0m[;1m
+    The export item ‘module Numeric.FastMath.SignedZeros’ exports nothing[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m12 |[0m[0m     , [;1m[35mmodule Numeric.FastMath.SignedZeros[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0mInstalling library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/fast-math-1.0.2-57OyWZliKBnE4ukdEp56Pd
+Registering library for fast-math-1.0.2..

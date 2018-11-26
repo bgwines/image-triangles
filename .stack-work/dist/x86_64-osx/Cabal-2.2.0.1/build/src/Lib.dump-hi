@@ -1,0 +1,76 @@
+
+==================== FINAL INTERFACE ====================
+2018-11-26 02:36:03.164258 UTC
+
+interface image-triangles-0.1.0.0-BiEiu2CzRvH4EcZBOTYVL9:Lib 8044
+  interface hash: 8a2c849b500191a328a80e2b772d5c12
+  ABI hash: 9939abe9427ebc6485f34ff3c372719a
+  export-list hash: 0e6d68cd44b7fb2cc5809ece1a76a1f5
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 8f52f5e5828eb5661f405d8d9ca450ec
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Lib.someFunc
+module dependencies:
+package dependencies: base-4.11.1.0* ghc-prim-0.5.2.0
+                      integer-gmp-1.0.2.0
+orphans: base-4.11.1.0:GHC.Float base-4.11.1.0:GHC.Base
+family instance modules: base-4.11.1.0:Control.Applicative
+                         base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity base-4.11.1.0:Data.Monoid
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:GHC.Generics
+                         base-4.11.1.0:GHC.IO.Exception
+import  -/  base-4.11.1.0:Prelude 0750c25585e2b797cd78291d423d39dd
+import  -/  base-4.11.1.0:System.IO e02b6055b5362a3eac04f83991602a53
+import  -/  ghc-prim-0.5.2.0:GHC.Types d9b3023de7feae4a5308d643da5543f7
+20e8cc1fa122520a07bdad50b416ccaa
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Lib.$trModule3 Lib.$trModule1) -}
+8d2e26d78fbb0a691128e480fb869b33
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Lib.$trModule2) -}
+8c538c6b3494624091641f07241086a5
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Lib"#) -}
+e137dae345cbb187caafba1231227029
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Lib.$trModule4) -}
+bdbd77c355de1c186158c8dbfa1e5ac1
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("image-triangles-0.1.0.0-BiEiu2CzRvH4EcZBOTYVL9"#) -}
+df536f98c02314a6662bf541bf7498a1
+  someFunc :: GHC.Types.IO ()
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Lib.someFunc1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+d131a9a010ae3007d5d4ba1dbbd3ee60
+  someFunc1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   Lib.someFunc2
+                   GHC.Types.True) -}
+781a4bea00e504b56ae42eaed4facdc2
+  someFunc2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.someFunc3) -}
+c5fc74bd5257719b37f60b19580db519
+  someFunc3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("someFunc"#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

@@ -1,0 +1,27 @@
+Configuring matrices-0.4.5...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for matrices-0.4.5..
+Building library for matrices-0.4.5..
+[ 1 of 13] Compiling Data.Matrix.Generic.Mutable ( src/Data/Matrix/Generic/Mutable.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Matrix/Generic/Mutable.o )
+[ 2 of 13] Compiling Data.Matrix.Generic ( src/Data/Matrix/Generic.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Matrix/Generic.o )
+[ 3 of 13] Compiling Data.Matrix.Dense.Generic.Mutable ( src/Data/Matrix/Dense/Generic/Mutable.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Matrix/Dense/Generic/Mutable.o )
+[ 4 of 13] Compiling Data.Matrix.Dense.Generic ( src/Data/Matrix/Dense/Generic.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Matrix/Dense/Generic.o )
+[ 5 of 13] Compiling Data.Matrix      ( src/Data/Matrix.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Matrix.o )
+[ 6 of 13] Compiling Data.Matrix.Mutable ( src/Data/Matrix/Mutable.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Matrix/Mutable.o )
+[ 7 of 13] Compiling Data.Matrix.Sparse.Generic ( src/Data/Matrix/Sparse/Generic.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Matrix/Sparse/Generic.o )
+
+[;1msrc/Data/Matrix/Sparse/Generic.hs:42:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m42 |[0m[0m [;1m[35mimport           Control.Applicative               ((<$>))[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[ 8 of 13] Compiling Data.Matrix.Storable ( src/Data/Matrix/Storable.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Matrix/Storable.o )
+[ 9 of 13] Compiling Data.Matrix.Storable.Mutable ( src/Data/Matrix/Storable/Mutable.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Matrix/Storable/Mutable.o )
+[10 of 13] Compiling Data.Matrix.Symmetric.Mutable ( src/Data/Matrix/Symmetric/Mutable.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Matrix/Symmetric/Mutable.o )
+[11 of 13] Compiling Data.Matrix.Symmetric ( src/Data/Matrix/Symmetric.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Matrix/Symmetric.o )
+[12 of 13] Compiling Data.Matrix.Unboxed ( src/Data/Matrix/Unboxed.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Matrix/Unboxed.o )
+[13 of 13] Compiling Data.Matrix.Unboxed.Mutable ( src/Data/Matrix/Unboxed/Mutable.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Matrix/Unboxed/Mutable.o )
+Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/matrices-0.4.5-5YvGMyIsdoE9YQY0IBcnCB
+Registering library for matrices-0.4.5..

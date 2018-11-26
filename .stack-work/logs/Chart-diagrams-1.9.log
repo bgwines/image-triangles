@@ -1,0 +1,8 @@
+Configuring Chart-diagrams-1.9...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for Chart-diagrams-1.9..
+Building library for Chart-diagrams-1.9..
+[1 of 2] Compiling Paths_Chart_diagrams ( .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/autogen/Paths_Chart_diagrams.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Paths_Chart_diagrams.o )
+[2 of 2] Compiling Graphics.Rendering.Chart.Backend.Diagrams ( Graphics/Rendering/Chart/Backend/Diagrams.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Backend/Diagrams.o )
+Installing library in /Users/brett/code/image-triangles/.stack-work/install/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/Chart-diagrams-1.9-ipWQ8Nwymy1ZOdbSrc93c
+Registering library for Chart-diagrams-1.9..

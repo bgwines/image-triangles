@@ -1,0 +1,14 @@
+Configuring NumInstances-1.4...
+Warning: 'ghc-options: -prof' is not necessary and will lead to problems when
+used on a library. Use the configure flag --enable-library-profiling and/or
+--enable-profiling.
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for NumInstances-1.4..
+Building library for NumInstances-1.4..
+[1 of 5] Compiling Data.NumInstances.PreRequisites ( src-relaxed-Num/Data/NumInstances/PreRequisites.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/NumInstances/PreRequisites.o )
+[2 of 5] Compiling Data.NumInstances.Function ( src/Data/NumInstances/Function.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/NumInstances/Function.o )
+[3 of 5] Compiling Data.NumInstances.Tuple ( src/Data/NumInstances/Tuple.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/NumInstances/Tuple.o )
+[4 of 5] Compiling Data.NumInstances ( src/Data/NumInstances.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/NumInstances.o )
+[5 of 5] Compiling Data.NumInstances.Util ( src/Data/NumInstances/Util.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/NumInstances/Util.o )
+Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/NumInstances-1.4-AVn1xz5sLyRIgbc5qOKoiL
+Registering library for NumInstances-1.4..

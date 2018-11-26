@@ -1,0 +1,91 @@
+Configuring Chart-1.9...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for Chart-1.9..
+Building library for Chart-1.9..
+[ 1 of 37] Compiling Graphics.Rendering.Chart.Geometry ( Graphics/Rendering/Chart/Geometry.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Geometry.o )
+[ 2 of 37] Compiling Graphics.Rendering.Chart.Backend.Types ( Graphics/Rendering/Chart/Backend/Types.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Backend/Types.o )
+[ 3 of 37] Compiling Graphics.Rendering.Chart.Backend.Impl ( Graphics/Rendering/Chart/Backend/Impl.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Backend/Impl.o )
+[ 4 of 37] Compiling Graphics.Rendering.Chart.Backend ( Graphics/Rendering/Chart/Backend.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Backend.o )
+[ 5 of 37] Compiling Graphics.Rendering.Chart.Drawing ( Graphics/Rendering/Chart/Drawing.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Drawing.o )
+
+[;1mGraphics/Rendering/Chart/Drawing.hs:98:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Data.Monoid’ is redundant
+      except perhaps to import instances from ‘Data.Monoid’
+    To import instances alone, use: import Data.Monoid()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m98 |[0m[0m [;1m[35mimport Data.Monoid[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[ 6 of 37] Compiling Graphics.Rendering.Chart.Plot.Types ( Graphics/Rendering/Chart/Plot/Types.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot/Types.o )
+[ 7 of 37] Compiling Graphics.Rendering.Chart.Plot.Points ( Graphics/Rendering/Chart/Plot/Points.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot/Points.o )
+[ 8 of 37] Compiling Graphics.Rendering.Chart.Plot.Lines ( Graphics/Rendering/Chart/Plot/Lines.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot/Lines.o )
+[ 9 of 37] Compiling Graphics.Rendering.Chart.Plot.Hidden ( Graphics/Rendering/Chart/Plot/Hidden.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot/Hidden.o )
+[10 of 37] Compiling Graphics.Rendering.Chart.Plot.FillBetween ( Graphics/Rendering/Chart/Plot/FillBetween.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot/FillBetween.o )
+[11 of 37] Compiling Graphics.Rendering.Chart.Plot.ErrBars ( Graphics/Rendering/Chart/Plot/ErrBars.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot/ErrBars.o )
+
+[;1mGraphics/Rendering/Chart/Plot/ErrBars.hs:28:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Data.Monoid’ is redundant
+      except perhaps to import instances from ‘Data.Monoid’
+    To import instances alone, use: import Data.Monoid()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m28 |[0m[0m [;1m[35mimport Data.Monoid[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[12 of 37] Compiling Graphics.Rendering.Chart.Plot.Candle ( Graphics/Rendering/Chart/Plot/Candle.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot/Candle.o )
+
+[;1mGraphics/Rendering/Chart/Plot/Candle.hs:27:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Data.Monoid’ is redundant
+      except perhaps to import instances from ‘Data.Monoid’
+    To import instances alone, use: import Data.Monoid()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m27 |[0m[0m [;1m[35mimport Data.Monoid[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[13 of 37] Compiling Graphics.Rendering.Chart.Utils ( Graphics/Rendering/Chart/Utils.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Utils.o )
+[14 of 37] Compiling Graphics.Rendering.Chart.Renderable ( Graphics/Rendering/Chart/Renderable.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Renderable.o )
+
+[;1mGraphics/Rendering/Chart/Renderable.hs:45:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Data.Monoid’ is redundant
+      except perhaps to import instances from ‘Data.Monoid’
+    To import instances alone, use: import Data.Monoid()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m45 |[0m[0m [;1m[35mimport Data.Monoid[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[15 of 37] Compiling Graphics.Rendering.Chart.SparkLine ( Graphics/Rendering/Chart/SparkLine.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/SparkLine.o )
+[16 of 37] Compiling Graphics.Rendering.Chart.Plot.Annotation ( Graphics/Rendering/Chart/Plot/Annotation.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot/Annotation.o )
+[17 of 37] Compiling Graphics.Rendering.Chart.Grid ( Graphics/Rendering/Chart/Grid.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Grid.o )
+[18 of 37] Compiling Graphics.Rendering.Chart.Plot.Pie ( Graphics/Rendering/Chart/Plot/Pie.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot/Pie.o )
+
+[;1mGraphics/Rendering/Chart/Plot/Pie.hs:53:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Data.Monoid’ is redundant
+      except perhaps to import instances from ‘Data.Monoid’
+    To import instances alone, use: import Data.Monoid()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m53 |[0m[0m [;1m[35mimport Data.Monoid[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[19 of 37] Compiling Graphics.Rendering.Chart.Legend ( Graphics/Rendering/Chart/Legend.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Legend.o )
+[20 of 37] Compiling Graphics.Rendering.Chart.Axis.Types ( Graphics/Rendering/Chart/Axis/Types.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Axis/Types.o )
+[21 of 37] Compiling Graphics.Rendering.Chart.Axis.Unit ( Graphics/Rendering/Chart/Axis/Unit.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Axis/Unit.o )
+[22 of 37] Compiling Graphics.Rendering.Chart.Axis.Time ( Graphics/Rendering/Chart/Axis/Time.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Axis/Time.o )
+[23 of 37] Compiling Graphics.Rendering.Chart.Axis.LocalTime ( Graphics/Rendering/Chart/Axis/LocalTime.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Axis/LocalTime.o )
+[24 of 37] Compiling Graphics.Rendering.Chart.Axis.Indexed ( Graphics/Rendering/Chart/Axis/Indexed.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Axis/Indexed.o )
+[25 of 37] Compiling Graphics.Rendering.Chart.Axis.Floating ( Graphics/Rendering/Chart/Axis/Floating.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Axis/Floating.o )
+[26 of 37] Compiling Graphics.Rendering.Chart.Axis.Int ( Graphics/Rendering/Chart/Axis/Int.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Axis/Int.o )
+[27 of 37] Compiling Graphics.Rendering.Chart.Axis ( Graphics/Rendering/Chart/Axis.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Axis.o )
+[28 of 37] Compiling Graphics.Rendering.Chart.Plot.Vectors ( Graphics/Rendering/Chart/Plot/Vectors.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot/Vectors.o )
+[29 of 37] Compiling Graphics.Rendering.Chart.Plot.Bars ( Graphics/Rendering/Chart/Plot/Bars.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot/Bars.o )
+[30 of 37] Compiling Graphics.Rendering.Chart.Plot.AreaSpots ( Graphics/Rendering/Chart/Plot/AreaSpots.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot/AreaSpots.o )
+[31 of 37] Compiling Numeric.Histogram ( Numeric/Histogram.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Numeric/Histogram.o )
+[32 of 37] Compiling Graphics.Rendering.Chart.Plot.Histogram ( Graphics/Rendering/Chart/Plot/Histogram.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot/Histogram.o )
+
+[;1mGraphics/Rendering/Chart/Plot/Histogram.hs:23:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Data.Monoid’ is redundant
+      except perhaps to import instances from ‘Data.Monoid’
+    To import instances alone, use: import Data.Monoid()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m23 |[0m[0m [;1m[35mimport Data.Monoid[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[33 of 37] Compiling Graphics.Rendering.Chart.Plot ( Graphics/Rendering/Chart/Plot.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Plot.o )
+[34 of 37] Compiling Graphics.Rendering.Chart.Layout ( Graphics/Rendering/Chart/Layout.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Layout.o )
+[35 of 37] Compiling Graphics.Rendering.Chart.State ( Graphics/Rendering/Chart/State.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/State.o )
+[36 of 37] Compiling Graphics.Rendering.Chart ( Graphics/Rendering/Chart.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart.o )
+[37 of 37] Compiling Graphics.Rendering.Chart.Easy ( Graphics/Rendering/Chart/Easy.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/Chart/Easy.o )
+Installing library in /Users/brett/code/image-triangles/.stack-work/install/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/Chart-1.9-7L8lnMQaYwC4tUCNjaYdNn
+Registering library for Chart-1.9..

@@ -1,0 +1,36 @@
+Configuring mfsolve-0.3.2.0...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for mfsolve-0.3.2.0..
+Building library for mfsolve-0.3.2.0..
+[1 of 1] Compiling Math.MFSolve     ( Math/MFSolve.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Math/MFSolve.o )
+
+[;1mMath/MFSolve.hs:111:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m111 |[0m[0m [;1m[35mimport Control.Applicative hiding (Const)[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mMath/MFSolve.hs:208:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wmissing-signatures[0m[0m[;1m][0m[0m[;1m
+    Pattern synonym with no type signature:
+      pattern LinearE :: forall v n. LinExpr v n -> Expr v n[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m208 |[0m[0m [;1m[35mpattern LinearE l = Expr l [] [][0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mMath/MFSolve.hs:209:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wmissing-signatures[0m[0m[;1m][0m[0m[;1m
+    Pattern synonym with no type signature:
+      pattern ConstE :: forall v n. n -> Expr v n[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m209 |[0m[0m [;1m[35mpattern ConstE c = Expr (LinExpr c []) [] [][0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mMath/MFSolve.hs:210:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wmissing-signatures[0m[0m[;1m][0m[0m[;1m
+    Pattern synonym with no type signature:
+      pattern LConst :: forall v n. n -> LinExpr v n[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m210 |[0m[0m [;1m[35mpattern LConst c = LinExpr c [][0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0mInstalling library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/mfsolve-0.3.2.0-2aP33rVxJqQDhhPZpUiLH4
+Registering library for mfsolve-0.3.2.0..

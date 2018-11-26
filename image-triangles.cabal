@@ -1,8 +1,10 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ec746e5db32e60009159554b56997247c014960b3b285a4ede3b3f13a8ac9d0d
+-- hash: afa17b240f912342e8e6d1e7720987f68a89ca05b9d97af9eeb51687ec3c52b9
 
 name:           image-triangles
 version:        0.1.0.0
@@ -15,10 +17,9 @@ copyright:      2018 Jack Wines
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
-cabal-version:  >= 1.10
 extra-source-files:
-    ChangeLog.md
     README.md
+    ChangeLog.md
 
 source-repository head
   type: git

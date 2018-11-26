@@ -1,0 +1,7 @@
+Configuring force-layout-0.4.0.6...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for force-layout-0.4.0.6..
+Building library for force-layout-0.4.0.6..
+[1 of 1] Compiling Physics.ForceLayout ( src/Physics/ForceLayout.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Physics/ForceLayout.o )
+Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/force-layout-0.4.0.6-EdqU2j8k73l3PtY440JyJz
+Registering library for force-layout-0.4.0.6..

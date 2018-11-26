@@ -1,0 +1,8 @@
+Configuring ansi-wl-pprint-0.6.8.2...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for ansi-wl-pprint-0.6.8.2..
+Building library for ansi-wl-pprint-0.6.8.2..
+[1 of 2] Compiling Text.PrettyPrint.ANSI.Leijen.Internal ( Text/PrettyPrint/ANSI/Leijen/Internal.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Text/PrettyPrint/ANSI/Leijen/Internal.o )
+[2 of 2] Compiling Text.PrettyPrint.ANSI.Leijen ( Text/PrettyPrint/ANSI/Leijen.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Text/PrettyPrint/ANSI/Leijen.o )
+Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/ansi-wl-pprint-0.6.8.2-CRoRAdEpifJaTwySBP3K4
+Registering library for ansi-wl-pprint-0.6.8.2..
