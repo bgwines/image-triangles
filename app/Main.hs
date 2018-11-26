@@ -1,6 +1,9 @@
 module Main where
 
 import Lib
+import Graphics.Image
 
 main :: IO ()
-main = displayGradGrayImage
+main = do
+    image <- readImageRGB VU "sierra.jpg"
+    displayImage image
