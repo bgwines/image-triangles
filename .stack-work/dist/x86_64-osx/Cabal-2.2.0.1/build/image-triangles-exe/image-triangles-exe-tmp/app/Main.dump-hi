@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2018-11-26 02:36:04.132724 UTC
+2018-11-26 02:52:02.53726 UTC
 
 interface main:Main 8044
-  interface hash: 37574635ef6411f21abce3eb6fd5c56c
-  ABI hash: 029863e8cb9f5c6ff5622257bb8fe049
-  export-list hash: a6cd56587acfe052bcbd2986dbccdc2e
+  interface hash: c4233081e0e771fa562b73e41ea207ed
+  ABI hash: 732bce1b9f16177cdbda346e28ff9106
+  export-list hash: ed9d6e25b534994ace4724fa822bc51e
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 52b47b7621d62bf80cb431be78e45c68
   opt_hash: 14e536840aca4e889cad654e6f9b79c1
@@ -16,17 +16,198 @@ interface main:Main 8044
 exports:
   Main.main
 module dependencies:
-package dependencies: base-4.11.1.0* ghc-prim-0.5.2.0
+package dependencies: Chart-1.9 Chart-diagrams-1.9
+                      JuicyPixels-3.2.9.5 OneTuple-0.2.2 QuickCheck-2.11.3
+                      SVGFonts-1.6.0.3 StateVar-1.1.1.1 active-0.2.0.13 adjunctions-4.4
+                      array-0.5.2.0 attoparsec-0.13.2.2 attoparsec-binary-0.2
+                      base-4.11.1.0 base-orphans-0.7 base64-bytestring-1.0.0.1
+                      bifunctors-5.5.3 binary-0.8.5.1 blaze-builder-0.4.1.0
+                      blaze-markup-0.8.2.2 blaze-svg-0.3.6.1 bytes-0.15.5
+                      bytestring-0.10.8.2 call-stack-0.1.0 cereal-0.5.7.0
+                      cereal-vector-0.2.0.1 colour-2.3.4 comonad-5.0.4
+                      containers-0.5.11.0 contravariant-1.4.1 data-default-class-0.1.2.0
+                      deepseq-1.4.3.0 diagrams-core-1.4.1.1 diagrams-lib-1.4.2.3
+                      diagrams-postscript-1.4.1 diagrams-solve-0.1.1 diagrams-svg-1.4.2
+                      directory-1.3.1.5 distributive-0.5.3 dlist-0.8.0.5 dual-tree-0.2.2
+                      exceptions-0.10.0 filepath-1.4.2 fingertree-0.1.4.1 free-5.0.2
+                      ghc-boot-th-8.4.4 ghc-prim-0.5.2.0 hashable-1.2.7.0 hip-1.5.3.0
                       image-triangles-0.1.0.0 integer-gmp-1.0.2.0
-orphans: base-4.11.1.0:GHC.Float base-4.11.1.0:GHC.Base
-family instance modules: base-4.11.1.0:Control.Applicative
-                         base-4.11.1.0:Data.Functor.Const
-                         base-4.11.1.0:Data.Functor.Identity base-4.11.1.0:Data.Monoid
-                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:GHC.Generics
-                         base-4.11.1.0:GHC.IO.Exception
+                      integer-logarithms-1.0.2.2 intervals-0.8.1 kan-extensions-5.2
+                      lens-4.16.1 linear-1.20.8 monoid-extras-0.5 mtl-2.2.2 netpbm-1.0.2
+                      newtype-generics-0.5.3 operational-0.2.3.5 pretty-1.1.3.6
+                      primitive-0.6.3.0 process-1.6.3.0 profunctors-5.2.2 random-1.1
+                      reflection-2.1.4 repa-3.4.1.4 scientific-0.3.6.2
+                      semigroupoids-5.2.2 split-0.2.3.3 statestack-0.2.0.5 stm-2.4.5.1
+                      storable-record-0.0.4 svg-builder-0.1.1 tagged-0.8.5
+                      template-haskell-2.13.0.0 temporary-1.3 text-1.2.3.1 tf-random-0.5
+                      th-abstraction-0.2.8.0 time-1.8.0.2 transformers-0.5.5.0
+                      transformers-base-0.4.5.2 transformers-compat-0.6.2 tuple-0.3.0.2
+                      unix-2.7.2.2 unordered-containers-0.2.9.0 vector-0.12.0.1
+                      vector-th-unbox-0.2.1.6 xml-1.3.14 zlib-0.6.2
+orphans: hip-1.5.3.0:Graphics.Image.Types
+         hip-1.5.3.0:Graphics.Image.Interface.Repa.Generic
+         repa-3.4.1.4:Data.Array.Repa.Operators.Reduction
+         repa-3.4.1.4:Data.Array.Repa.Arbitrary
+         hip-1.5.3.0:Graphics.Image.Interface.Vector.Unboxing
+         diagrams-lib-1.4.2.3:Diagrams.Animation.Active
+         diagrams-lib-1.4.2.3:Diagrams.TwoD.Path
+         diagrams-lib-1.4.2.3:Diagrams.TwoD.Segment
+         diagrams-lib-1.4.2.3:Diagrams.Trail
+         diagrams-lib-1.4.2.3:Diagrams.ThreeD.Types
+         diagrams-lib-1.4.2.3:Diagrams.TwoD.Types
+         diagrams-core-1.4.1.1:Diagrams.Core.Types
+         monoid-extras-0.5:Data.Monoid.MList
+         diagrams-core-1.4.1.1:Diagrams.Core.Points
+         time-1.8.0.2:Data.Time.Clock.TAI linear-1.20.8:Linear.Instances
+         attoparsec-0.13.2.2:Data.Attoparsec.Text.Internal
+         attoparsec-0.13.2.2:Data.Attoparsec.ByteString.Char8
+         cereal-vector-0.2.0.1:Data.Vector.Serialize
+         Chart-1.9:Graphics.Rendering.Chart.Axis.Int
+         Chart-1.9:Graphics.Rendering.Chart.Axis.Floating
+         Chart-1.9:Graphics.Rendering.Chart.Axis.Time
+         time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian
+         Chart-1.9:Graphics.Rendering.Chart.Axis.Unit
+         colour-2.3.4:Data.Colour reflection-2.1.4:Data.Reflection
+         vector-0.12.0.1:Data.Vector.Unboxed
+         hashable-1.2.7.0:Data.Hashable.Generic text-1.2.3.1:Data.Text.Lazy
+         text-1.2.3.1:Data.Text binary-0.8.5.1:Data.Binary.Generic
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         text-1.2.3.1:Data.Text.Show stm-2.4.5.1:Control.Monad.STM
+         vector-0.12.0.1:Data.Vector.Fusion.Bundle
+         transformers-0.5.5.0:Control.Monad.Trans.Error
+         base-4.11.1.0:GHC.Float base-4.11.1.0:GHC.Base
+family instance modules: JuicyPixels-3.2.9.5:Codec.Picture.Tga
+                         JuicyPixels-3.2.9.5:Codec.Picture.Tiff
+                         JuicyPixels-3.2.9.5:Codec.Picture.Types
+                         SVGFonts-1.6.0.3:Graphics.SVGFonts.ReadFont
+                         active-0.2.0.13:Data.Active adjunctions-4.4:Data.Functor.Rep
+                         attoparsec-0.13.2.2:Data.Attoparsec.Internal.Types
+                         base-4.11.1.0:Control.Applicative base-4.11.1.0:Data.Complex
+                         base-4.11.1.0:Data.Functor.Compose base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         bifunctors-5.5.3:Data.Bifunctor.Biff
+                         bifunctors-5.5.3:Data.Bifunctor.Clown
+                         bifunctors-5.5.3:Data.Bifunctor.Fix
+                         bifunctors-5.5.3:Data.Bifunctor.Flip
+                         bifunctors-5.5.3:Data.Bifunctor.Join
+                         bifunctors-5.5.3:Data.Bifunctor.Joker
+                         bifunctors-5.5.3:Data.Bifunctor.Product
+                         bifunctors-5.5.3:Data.Bifunctor.Sum
+                         bifunctors-5.5.3:Data.Bifunctor.Tannen
+                         bifunctors-5.5.3:Data.Bifunctor.Wrapped bytes-0.15.5:Data.Bytes.Get
+                         bytes-0.15.5:Data.Bytes.Signed bytes-0.15.5:Data.Bytes.VarInt
+                         containers-0.5.11.0:Data.IntMap.Internal
+                         containers-0.5.11.0:Data.IntSet.Internal
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Sequence.Internal
+                         containers-0.5.11.0:Data.Set.Internal containers-0.5.11.0:Data.Tree
+                         diagrams-core-1.4.1.1:Diagrams.Core.Envelope
+                         diagrams-core-1.4.1.1:Diagrams.Core.Measure
+                         diagrams-core-1.4.1.1:Diagrams.Core.Names
+                         diagrams-core-1.4.1.1:Diagrams.Core.Points
+                         diagrams-core-1.4.1.1:Diagrams.Core.Query
+                         diagrams-core-1.4.1.1:Diagrams.Core.Style
+                         diagrams-core-1.4.1.1:Diagrams.Core.Trace
+                         diagrams-core-1.4.1.1:Diagrams.Core.Transform
+                         diagrams-core-1.4.1.1:Diagrams.Core.Types
+                         diagrams-core-1.4.1.1:Diagrams.Core.V
+                         diagrams-lib-1.4.2.3:Diagrams.Angle
+                         diagrams-lib-1.4.2.3:Diagrams.Animation.Active
+                         diagrams-lib-1.4.2.3:Diagrams.BoundingBox
+                         diagrams-lib-1.4.2.3:Diagrams.Coordinates
+                         diagrams-lib-1.4.2.3:Diagrams.Direction
+                         diagrams-lib-1.4.2.3:Diagrams.Located
+                         diagrams-lib-1.4.2.3:Diagrams.Path
+                         diagrams-lib-1.4.2.3:Diagrams.Segment
+                         diagrams-lib-1.4.2.3:Diagrams.Size
+                         diagrams-lib-1.4.2.3:Diagrams.Tangent
+                         diagrams-lib-1.4.2.3:Diagrams.ThreeD.Camera
+                         diagrams-lib-1.4.2.3:Diagrams.ThreeD.Light
+                         diagrams-lib-1.4.2.3:Diagrams.ThreeD.Shapes
+                         diagrams-lib-1.4.2.3:Diagrams.ThreeD.Types
+                         diagrams-lib-1.4.2.3:Diagrams.Trail
+                         diagrams-lib-1.4.2.3:Diagrams.TwoD.Attributes
+                         diagrams-lib-1.4.2.3:Diagrams.TwoD.Image
+                         diagrams-lib-1.4.2.3:Diagrams.TwoD.Path
+                         diagrams-lib-1.4.2.3:Diagrams.TwoD.Segment.Bernstein
+                         diagrams-lib-1.4.2.3:Diagrams.TwoD.Text
+                         diagrams-lib-1.4.2.3:Diagrams.TwoD.Types
+                         diagrams-postscript-1.4.1:Diagrams.Backend.Postscript
+                         diagrams-svg-1.4.2:Diagrams.Backend.SVG dlist-0.8.0.5:Data.DList
+                         dual-tree-0.2.2:Data.Tree.DUAL.Internal
+                         fingertree-0.1.4.1:Data.FingerTree
+                         free-5.0.2:Control.Comonad.Cofree
+                         free-5.0.2:Control.Comonad.Trans.Cofree
+                         free-5.0.2:Control.Monad.Free free-5.0.2:Control.Monad.Trans.Free
+                         ghc-boot-th-8.4.4:GHC.ForeignSrcLang.Type
+                         ghc-boot-th-8.4.4:GHC.LanguageExtensions.Type
+                         hip-1.5.3.0:Graphics.Image.ColorSpace.Binary
+                         hip-1.5.3.0:Graphics.Image.ColorSpace.CMYK
+                         hip-1.5.3.0:Graphics.Image.ColorSpace.HSI
+                         hip-1.5.3.0:Graphics.Image.ColorSpace.RGB
+                         hip-1.5.3.0:Graphics.Image.ColorSpace.X
+                         hip-1.5.3.0:Graphics.Image.ColorSpace.Y
+                         hip-1.5.3.0:Graphics.Image.ColorSpace.YCbCr
+                         hip-1.5.3.0:Graphics.Image.IO.Formats
+                         hip-1.5.3.0:Graphics.Image.IO.Formats.JuicyPixels
+                         hip-1.5.3.0:Graphics.Image.IO.Formats.Netpbm
+                         hip-1.5.3.0:Graphics.Image.Interface.Repa.Storable
+                         hip-1.5.3.0:Graphics.Image.Interface.Repa.Unboxed
+                         hip-1.5.3.0:Graphics.Image.Interface.Vector.Storable
+                         hip-1.5.3.0:Graphics.Image.Interface.Vector.Unboxed
+                         hip-1.5.3.0:Graphics.Image.Interface.Vector.Unboxing
+                         intervals-0.8.1:Numeric.Interval.Kaucher
+                         kan-extensions-5.2:Data.Functor.Day
+                         kan-extensions-5.2:Data.Functor.Yoneda lens-4.16.1:Control.Lens.At
+                         lens-4.16.1:Control.Lens.Internal.Indexed
+                         lens-4.16.1:Control.Lens.Reified lens-4.16.1:Control.Lens.Tuple
+                         lens-4.16.1:Control.Lens.Wrapped lens-4.16.1:Control.Lens.Zoom
+                         linear-1.20.8:Linear.Affine linear-1.20.8:Linear.Plucker
+                         linear-1.20.8:Linear.Quaternion linear-1.20.8:Linear.V
+                         linear-1.20.8:Linear.V0 linear-1.20.8:Linear.V1
+                         linear-1.20.8:Linear.V2 linear-1.20.8:Linear.V3
+                         linear-1.20.8:Linear.V4 netpbm-1.0.2:Graphics.Netpbm
+                         newtype-generics-0.5.3:Control.Newtype.Generics
+                         pretty-1.1.3.6:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.6:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.3.0:Control.Monad.Primitive
+                         primitive-0.6.3.0:Data.Primitive.Array
+                         primitive-0.6.3.0:Data.Primitive.ByteArray
+                         profunctors-5.2.2:Data.Profunctor.Composition
+                         profunctors-5.2.2:Data.Profunctor.Rep
+                         repa-3.4.1.4:Data.Array.Repa.Operators.Mapping
+                         repa-3.4.1.4:Data.Array.Repa.Repr.ByteString
+                         repa-3.4.1.4:Data.Array.Repa.Repr.Cursored
+                         repa-3.4.1.4:Data.Array.Repa.Repr.Delayed
+                         repa-3.4.1.4:Data.Array.Repa.Repr.ForeignPtr
+                         repa-3.4.1.4:Data.Array.Repa.Repr.HintInterleave
+                         repa-3.4.1.4:Data.Array.Repa.Repr.HintSmall
+                         repa-3.4.1.4:Data.Array.Repa.Repr.Partitioned
+                         repa-3.4.1.4:Data.Array.Repa.Repr.Unboxed
+                         repa-3.4.1.4:Data.Array.Repa.Repr.Undefined
+                         repa-3.4.1.4:Data.Array.Repa.Repr.Vector
+                         repa-3.4.1.4:Data.Array.Repa.Slice tagged-0.8.5:Data.Tagged
+                         template-haskell-2.13.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.3.1:Data.Text text-1.2.3.1:Data.Text.Lazy
+                         th-abstraction-0.2.8.0:Language.Haskell.TH.Datatype
+                         unordered-containers-0.2.9.0:Data.HashMap.Base
+                         unordered-containers-0.2.9.0:Data.HashSet
+                         vector-0.12.0.1:Data.Vector vector-0.12.0.1:Data.Vector.Primitive
+                         vector-0.12.0.1:Data.Vector.Storable
+                         vector-0.12.0.1:Data.Vector.Unboxed
+                         vector-0.12.0.1:Data.Vector.Unboxed.Base
+                         zlib-0.6.2:Codec.Compression.Zlib.Stream
 import  -/  base-4.11.1.0:Prelude 0750c25585e2b797cd78291d423d39dd
 import  -/  ghc-prim-0.5.2.0:GHC.Types d9b3023de7feae4a5308d643da5543f7
-import  -/  image-triangles-0.1.0.0:Lib 9939abe9427ebc6485f34ff3c372719a
+import  -/  image-triangles-0.1.0.0:Lib 6fb4f2cc702329702648ac6557247317
 be86c9d078d3acbf19ba91fe74a24273
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -45,24 +226,28 @@ e5875966b74dad2d29772660b8a75e33
 d026be77cb9ced20e35a61514e0458aa
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-255cfb0e64c03829481179c17c2d3413
+c44261b27d367996ee6743ad7a846a9d
   main :: GHC.Types.IO ()
   {- Arity: 1,
      Unfolding: InlineRule (0, True, True)
-                Lib.someFunc1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-633072eb75098d19e3396be713005d53
+                Lib.displayGradGrayImage1
+                  `cast`
+                (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+80996a5f967d31543d2c5a341355d7c9
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
-                   Lib.someFunc1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+                   Lib.displayGradGrayImage1
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
 parallel variables:
 parallel tycons:
-trusted: safe
+trusted: none
 require own pkg trusted: False
 
