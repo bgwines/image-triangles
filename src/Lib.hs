@@ -1,16 +1,17 @@
 {-# LANGUAGE TupleSections #-}
 
 module Lib
-( getRandomPixel
+( getRandomTriangle
 , getPointsInTriangle
-, getPointsInRandomTriangle
+, getTriangleAverageRGB
 ) where
 
 
-import Graphics.Image
+import Graphics.Image hiding (map)
 import qualified System.Random
 
 type Image_ = Image VU RGB Double
+type Pixel_ = Pixel RGB Double
 type Point = (Int, Int)
 type Triangle = (Point, Point, Point)
 
@@ -24,17 +25,29 @@ getRandomPixel image = do
         getCoord :: Int -> IO Int
         getCoord = System.Random.getStdRandom . System.Random.randomR . (1,)
 
+getRandomTriangle :: Image_ -> IO Triangle
+getRandomTriangle image = do
+    a <- Lib.getRandomPixel image
+    b <- Lib.getRandomPixel image
+    c <- Lib.getRandomPixel image
+    return (a, b, c)
+    
 getPointsInTriangle :: Image_ -> Triangle -> [Point]
 getPointsInTriangle image triangle
     = filter (isPointInTriangle triangle)
     $ (,) <$> [0..(rows image)] <*> [0..(cols image)]
 
-getPointsInRandomTriangle :: Image_ -> IO [Point]
-getPointsInRandomTriangle image = do
-    a <- getRandomPixel image
-    b <- getRandomPixel image
-    c <- getRandomPixel image
-    return $ getPointsInTriangle image (a, b, c)        
+getTriangleAverageRGB :: Image_ -> Triangle -> Pixel_
+getTriangleAverageRGB image triangle = (foldl1 (+) pixels) / nPixels
+    where
+        nPixels :: Pixel RGB Double
+        nPixels = fromIntegral $ length pixels
+
+        pixels :: [Pixel_]
+        pixels = map (index image) points
+
+        points :: [Point]
+        points = getPointsInTriangle image triangle
 
 isPointInTriangle :: Triangle -> Point -> Bool
 isPointInTriangle (v1, v2, v3) pt = not (has_neg && has_pos)
