@@ -1,9 +1,0 @@
-Configuring diagrams-svg-1.4.2...
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-Preprocessing library for diagrams-svg-1.4.2..
-Building library for diagrams-svg-1.4.2..
-[1 of 3] Compiling Graphics.Rendering.SVG ( src/Graphics/Rendering/SVG.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Rendering/SVG.o )
-[2 of 3] Compiling Diagrams.Backend.SVG ( src/Diagrams/Backend/SVG.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Diagrams/Backend/SVG.o )
-[3 of 3] Compiling Diagrams.Backend.SVG.CmdLine ( src/Diagrams/Backend/SVG/CmdLine.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Diagrams/Backend/SVG/CmdLine.o )
-Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/diagrams-svg-1.4.2-CvLz6EPwTBNISq9P7vLcDZ
-Registering library for diagrams-svg-1.4.2..

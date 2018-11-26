@@ -1,8 +1,0 @@
-Configuring dual-tree-0.2.2...
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-Preprocessing library for dual-tree-0.2.2..
-Building library for dual-tree-0.2.2..
-[1 of 2] Compiling Data.Tree.DUAL.Internal ( src/Data/Tree/DUAL/Internal.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Tree/DUAL/Internal.o )
-[2 of 2] Compiling Data.Tree.DUAL   ( src/Data/Tree/DUAL.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Tree/DUAL.o )
-Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/dual-tree-0.2.2-2V014sJ0hM3GbUiTU5bNEW
-Registering library for dual-tree-0.2.2..

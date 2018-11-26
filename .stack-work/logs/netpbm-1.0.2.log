@@ -1,7 +1,0 @@
-Configuring netpbm-1.0.2...
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-Preprocessing library for netpbm-1.0.2..
-Building library for netpbm-1.0.2..
-[1 of 1] Compiling Graphics.Netpbm  ( src/Graphics/Netpbm.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Graphics/Netpbm.o )
-Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/netpbm-1.0.2-3hsMhNWGkclIkDC6NOpRF5
-Registering library for netpbm-1.0.2..

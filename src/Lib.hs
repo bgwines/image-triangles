@@ -1,14 +1,27 @@
+{-# LANGUAGE TupleSections #-}
+
 module Lib
-( displayGradGrayImage
+( getRandomPixel
 ) where
 
 
 import Graphics.Image
--- import Graphics.Image.Interface.Elevator
+import qualified System.Random
 
+type Image_ = Image RPU RGB Double
 
-makeGradGrayImage :: Image RPU Y Double
-makeGradGrayImage = makeImageR RPU (200, 200) (\(i, j) -> PixelY $ fromIntegral (i*j)) / (200*200)
+getRandomPixel :: Image_ -> IO (Int, Int)
+getRandomPixel image = do
+    -- TODO: something fancy with bifunctors
+    x <- getCoord . rows $ image
+    y <- getCoord . cols $ image
+    return (x, y)
+    where
+        getCoord :: Int -> IO Int
+        getCoord = System.Random.getStdRandom . System.Random.randomR . (1,)
 
-displayGradGrayImage :: IO ()
-displayGradGrayImage = displayImage makeGradGrayImage
+-- makeGradGrayImage :: Image_
+-- makeGradGrayImage = makeImageR RPU (200, 200) (\(i, j) -> PixelRGB $ fromIntegral (i*j)) / (200*200)
+
+-- displayGradGrayImage :: IO ()
+-- displayGradGrayImage = displayImage makeGradGrayImage

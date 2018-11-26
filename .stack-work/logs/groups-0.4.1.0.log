@@ -1,7 +1,0 @@
-Configuring groups-0.4.1.0...
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-Preprocessing library for groups-0.4.1.0..
-Building library for groups-0.4.1.0..
-[1 of 1] Compiling Data.Group       ( src/Data/Group.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Group.o )
-Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/groups-0.4.1.0-7fub8GuSGck19XOJZEB4yP
-Registering library for groups-0.4.1.0..

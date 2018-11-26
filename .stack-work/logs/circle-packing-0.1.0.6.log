@@ -1,7 +1,0 @@
-Configuring circle-packing-0.1.0.6...
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-Preprocessing library for circle-packing-0.1.0.6..
-Building library for circle-packing-0.1.0.6..
-[1 of 1] Compiling Optimisation.CirclePacking ( Optimisation/CirclePacking.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Optimisation/CirclePacking.o )
-Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/circle-packing-0.1.0.6-8eWwrAeYAo280skfXkrBhE
-Registering library for circle-packing-0.1.0.6..

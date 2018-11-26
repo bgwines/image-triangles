@@ -1,8 +1,0 @@
-Configuring microlens-mtl-0.1.11.1...
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-Preprocessing library for microlens-mtl-0.1.11.1..
-Building library for microlens-mtl-0.1.11.1..
-[1 of 2] Compiling Lens.Micro.Mtl.Internal ( src/Lens/Micro/Mtl/Internal.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Lens/Micro/Mtl/Internal.o )
-[2 of 2] Compiling Lens.Micro.Mtl   ( src/Lens/Micro/Mtl.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Lens/Micro/Mtl.o )
-Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/microlens-mtl-0.1.11.1-64CAJLipupEIbs7a9VxDev
-Registering library for microlens-mtl-0.1.11.1..

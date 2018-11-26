@@ -1,6 +1,0 @@
-Configuring diagrams-1.4...
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-Preprocessing library for diagrams-1.4..
-Building library for diagrams-1.4..
-Installing library in /Users/brett/.stack/snapshots/x86_64-osx/lts-12.19/8.4.4/lib/x86_64-osx-ghc-8.4.4/diagrams-1.4-BqYKRfMt9gz6VY1Z2ywkZR
-Registering library for diagrams-1.4..
