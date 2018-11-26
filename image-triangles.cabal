@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ec746e5db32e60009159554b56997247c014960b3b285a4ede3b3f13a8ac9d0d
+-- hash: 8096688bf99aec489ca869a3375d3474da0528acd8ea5ebdf3092cc33518dcbc
 
 name:           image-triangles
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 library
   exposed-modules:
       Lib
+      Render
   other-modules:
       Paths_image_triangles
   hs-source-dirs:
@@ -34,6 +35,8 @@ library
   build-depends:
       base >=4.7 && <5
     , diagrams
+    , diagrams-lib
+    , diagrams-svg
     , hip
   default-language: Haskell2010
 
@@ -47,6 +50,8 @@ executable image-triangles-exe
   build-depends:
       base >=4.7 && <5
     , diagrams
+    , diagrams-lib
+    , diagrams-svg
     , hip
     , image-triangles
   default-language: Haskell2010
@@ -62,6 +67,8 @@ test-suite image-triangles-test
   build-depends:
       base >=4.7 && <5
     , diagrams
+    , diagrams-lib
+    , diagrams-svg
     , hip
     , image-triangles
   default-language: Haskell2010
