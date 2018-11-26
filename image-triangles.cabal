@@ -1,0 +1,61 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 26a12656a101ec2e1d97d4a84d7faea94615630c3daeb9732fb31d02581a9b7f
+
+name:           image-triangles
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/jackoe/image-triangles#readme>
+homepage:       https://github.com/jackoe/image-triangles#readme
+bug-reports:    https://github.com/jackoe/image-triangles/issues
+author:         Jack Wines
+maintainer:     jack@winesj.com
+copyright:      2018 Jack Wines
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/jackoe/image-triangles
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_image_triangles
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable image-triangles-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_image_triangles
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , image-triangles
+  default-language: Haskell2010
+
+test-suite image-triangles-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_image_triangles
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , image-triangles
+  default-language: Haskell2010
