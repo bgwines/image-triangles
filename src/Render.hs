@@ -9,7 +9,12 @@ import Diagrams.Backend.SVG.CmdLine
 
 
 makeTriangle :: [Point V2 Double] -> Colour Double -> Diagram SVG
-makeTriangle verts col = fromVertices verts # mapLoc closeLine # strokeLocLoop #fc col # lw 0 # opacity 0.2
+makeTriangle verts col = fromVertices verts
+                       # mapLoc closeLine
+                       # strokeLocLoop 
+                       # fc col
+                       # lw 0
+                       # opacity 0.2
 
 
 -- tupleFromIntegral :: (Int, Int) -> (Int, Int) -> (Double, Double)

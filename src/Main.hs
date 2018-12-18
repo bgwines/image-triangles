@@ -8,24 +8,22 @@ import qualified Graphics.Image.ColorSpace as G
 import qualified Data.Colour.SRGB as C
 import Diagrams.Backend.SVG.CmdLine
 import Diagrams.Prelude
-
+import Data.List
+import Control.Parallel.Strategies
 
 
 genList = map mkStdGen . randoms
 
-singleTriangle image gen = reflectY . Ren.makeTriangle (Ren.toPointList dims t) $ col
+
+renderTri image t = reflectY . Ren.makeTriangle (Ren.toPointList dims t) $ col
     where
-        t = Tri.getRandomTriangle gen image
-        col = Tri.getTriangleAverageRGB image $ t
         dims = (cols image, rows image)
+        col = Tri.getTriangleAverageRGB image $ t
 
 main :: IO ()
 main = do
     image <- readImageRGB VU "sierra.jpg"
     gen <- getStdGen
-    print gen
-    let t = Tri.getRandomTriangle gen image
-    let col = Tri.getTriangleAverageRGB image t
-    print col
     let dims = (cols image, rows image)
-    mainWith . mconcat . take 50 . map (singleTriangle image) . genList $ gen
+    let triangleList = sortOn Tri.area . withStrategy (parListChunk 50 rseq) . take 50 . map (Tri.getRandomTriangle image) . genList $ gen
+    mainWith . mconcat . map (renderTri image) $ triangleList

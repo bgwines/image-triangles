@@ -14,16 +14,27 @@ import System.Random
 import qualified Data.Colour.SRGB as C
 import qualified Data.Colour as C
 import qualified Graphics.Image.ColorSpace as G
+import Data.List
 
 type Image_ = Image VU RGB Double
 type Pixel_ = Pixel RGB Double
 type Point = (Int, Int)
 type Triangle = (Point, Point, Point)
 
+area :: Triangle -> Double
+area (p1, p2, p3) = ccArea . swapForCounterClockwise . sortOn fst $ [p1, p2, p3]
+    where
+        swapForCounterClockwise [a, b, c] = if snd a < snd b
+                                               then [a, b, c]
+                                               else [b, a, c]
+        ccArea [(x1, y1), (x2, y2), (x3, y3)] = 
+            (fromIntegral (x1 * y2 + x2 * y3 + x3 * y1
+                         - x1 * y3 - x2 * y1 - x3 - y2)) / 2.0
+
 getRandomPixel :: StdGen -> Image_ -> (Int, Int)
 getRandomPixel gen image =
-    ( getCoord gen  . rows $ image
-    , getCoord gen' . cols $ image)
+    ( getCoord gen  . pred . rows $ image
+    , getCoord gen' . pred . cols $ image)
     where
         getCoord :: StdGen -> Int -> Int
         getCoord gen = fst . (flip randomR) gen . (1,)
@@ -32,8 +43,8 @@ getRandomPixel gen image =
 
 first3 (a : b : c : _) = (a, b, c)
 
-getRandomTriangle :: StdGen -> Image_ -> Triangle
-getRandomTriangle gen image =
+getRandomTriangle :: Image_ -> StdGen -> Triangle
+getRandomTriangle image gen =
     first3
     . map (\x -> getRandomPixel x image)
     . iterate (snd . next) $ gen

@@ -57,10 +57,11 @@ executable image-triangles
   other-extensions:    TupleSections
 
   -- Other library packages from which modules are imported.
-  build-depends:       base, random, hip, colour, diagrams-lib, diagrams-svg
+  build-depends:       base, random, hip, colour, diagrams-lib, diagrams-svg, parallel
 
   -- Directories containing source files.
   hs-source-dirs:      src
 
   -- Base language which the package is written in.
   default-language:    Haskell2010
+  ghc-options: -threaded -O3 

@@ -1,5 +1,5 @@
 { mkDerivation, base, colour, diagrams-lib, diagrams-svg, hip
-, random, stdenv
+, parallel, random, stdenv
 }:
 mkDerivation {
   pname = "image-triangles";
@@ -8,7 +8,7 @@ mkDerivation {
   isLibrary = false;
   isExecutable = true;
   executableHaskellDepends = [
-    base colour diagrams-lib diagrams-svg hip random
+    base colour diagrams-lib diagrams-svg hip parallel random
   ];
   license = stdenv.lib.licenses.bsd3;
 }
