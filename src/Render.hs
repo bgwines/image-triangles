@@ -18,7 +18,7 @@ makeTriangle verts col = fromVertices verts
 
 
 -- tupleFromIntegral :: (Int, Int) -> (Int, Int) -> (Double, Double)
-tupleFromIntegral (cols, rows) (a, b) = (fromIntegral a, fromIntegral b)
+tupleFromIntegral (cols, rows) (a, b) = (fromIntegral b, fromIntegral a)
 -- tupleFromIntegral (cols, rows) (a, b) = ((a `divv` cols) , ((rows - b) `divv` rows))
 
 divv :: Int -> Int -> Double
