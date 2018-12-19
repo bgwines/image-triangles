@@ -26,5 +26,5 @@ main = do
     gen <- getStdGen
     print gen
     let dims = (cols image, rows image)
-    let triangleList = sortOn (negate . Tri.area) . withStrategy (parListChunk 50 rseq) . take 600 . map (Tri.getRandomTriangle image) . genList $ gen
+    let triangleList = sortOn (Tri.area) . withStrategy (parListChunk 50 rseq) . take 600 . map (Tri.getRandomTriangle image) . genList $ gen
     mainWith . mconcat . map (renderTri image) $ triangleList
