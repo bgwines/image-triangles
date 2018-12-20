@@ -31,8 +31,10 @@ run with
 ```
 
 ### todo
-* Why is the area wrong for the top right corner?
-* Rasterization for triangles
+* Why is the area wrong for the top right corner? Could be a problem with area fn or with Diagrams laying them out improperly. 
+* Rasterization for triangles.
+Note, this is implemented but loops without stop for seed #713314263. generates 500 triangles, filters the 200 smallest
+Also indexOOBs for seed 426958934, 100 traingles no sort. Seems to be integer overflow, but that doesn't make much sense
 * Cmdline interface that lets you set number of triangles, and smallness
 * Pointy triangle filter
 * Confirm diagrams is rendering triangles in the correct places.
