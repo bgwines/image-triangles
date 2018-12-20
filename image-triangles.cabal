@@ -64,4 +64,4 @@ executable image-triangles
 
   -- Base language which the package is written in.
   default-language:    Haskell2010
-  ghc-options: -threaded -O3 
+  ghc-options: -threaded

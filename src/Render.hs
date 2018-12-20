@@ -14,7 +14,7 @@ makeTriangle verts col = fromVertices verts
                        # strokeLocLoop 
                        # fc col
                        # lw 0
-                       # opacity 0.2
+                       # opacity 0.8
 
 
 -- tupleFromIntegral :: (Int, Int) -> (Int, Int) -> (Double, Double)
