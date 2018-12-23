@@ -15,6 +15,8 @@ import qualified Data.Colour.SRGB as C
 import qualified Data.Colour as C
 import qualified Graphics.Image.ColorSpace as G
 import Data.List
+import Data.Maybe
+import Debug.Trace
 
 type Image_ = Image VU RGB Double
 type Pixel_ = Pixel RGB Double
@@ -24,14 +26,18 @@ type Triangle = (Point, Point, Point)
 shoelace :: [Point] -> Double 
 shoelace pts = halve . sum $ zipWith (*) (zipWith (+) xs' xs) (zipWith (-) ys' ys)
     where
+        showme =  zipWith (*) (zipWith (+) xs' xs) (zipWith (-) ys' ys)
         xs = map snd pts
         ys = map fst pts
         ys' = tail . cycle $ xs
         xs' = tail . cycle $ ys
         halve b =  (fromIntegral b) / 2.0
 
+shoelace' :: [Point] -> Double 
+shoelace' [(y1, x1), (y2, x2), (y3, x3)] =  abs $ (* 0.5) . fromIntegral $ x1*y2 + x2*y3 + x3*y1 - x2*y1 - x3*y2 - x1*y3
+
 area :: Triangle -> Double
-area (p1, p2, p3) = abs . shoelace $ [p1, p2, p3]
+area (p1, p2, p3) = shoelace' $ [p1, p2, p3]
 -- area (p1, p2, p3) = abs . ccArea . swapForCounterClockwise . sortOn fst $ [p1, p2, p3]
     where
         swapForCounterClockwise [a, b, c] = if snd a < snd b
@@ -54,14 +60,75 @@ getRandomPixel gen image =
 first3 (a : b : c : _) = (a, b, c)
 
 getRandomTriangle :: Image_ -> StdGen -> Triangle
-getRandomTriangle image gen =
-    first3
-    . map (\x -> getRandomPixel x image)
-    . iterate (snd . next) $ gen
+getRandomTriangle image gen = (p1, p2, p3)
+    where
+        p1 : p2 : _ = map (\x -> getRandomPixel x image) genList
+        
+        genList = tail . iterate (snd . next) $ gen
+
+        p3 = getThirdPoint p1 p2 gen (pi / 10.0)
+
+-- y = mx + b
+-- y = m'x + b'
+
+-- m'x + b' = mx + b
+-- m'x - mx = b - b'
+-- x(m' - m) = b - b'
+-- x = (b - b') / (m' - m)
+
+angleIntersect :: (Point, Double) -> (Point, Double) -> Point
+angleIntersect ((y1, x1), angle1) ((y2, x2), angle2) = (round y3, round x3)
+    where
+        m1 :: Double
+        m1 = tan angle1
+        m2 :: Double
+        m2 = tan angle2
+
+        x3 = (b1 - b2) / (m2 - m1)
+        y3 = (m1 * x3) + b1
+        y3' = (m2 * x3) + b2
+        
+        b1 :: Double
+        b1 = (fromIntegral y1) - (m1 * (fromIntegral x1))
+        b2 :: Double
+        b2 = (fromIntegral y2) - (m2 * (fromIntegral x2))
+
+getThirdPoint :: Point -> Point -> StdGen -> Double -> Point
+getThirdPoint p1 p2 gen tolerance = angleIntersect (p1, p1From2 + p1Angle) (p2, p2From1 - p2Angle)
+    where
+
+        showMe = [p1Angle, p2Angle, p3Angle]
+
+        p2From1 :: Double
+        p2From1 = angle p2 p1
+        
+        p1From2 :: Double
+        p1From2 = angle p1 p2
+
+        p3Angle :: Double
+        p3Angle = fst $ randomR (thirdpi - tolerance, thirdpi + tolerance) gen
+
+        thirdpi :: Double
+        thirdpi = pi / 3.0
+
+        p2Angle :: Double
+        p2Angle = fst $ randomR (thirdpi - tolerance, p2Max) (snd . next $ gen)
+
+        p2Max :: Double
+        p2Max = {-min (pi - p3Angle - (thirdpi - tolerance))-} (thirdpi + tolerance)
+
+        p1Angle :: Double
+        p1Angle = pi - p3Angle - p2Angle
+
+angle :: Point -> Point -> Double
+angle (y, x) (fromy, fromx) = atan2 y' x'
+    where
+        y' = fromIntegral $ y - fromy
+        x' = fromIntegral $ x - fromx
     
 getPointsInTriangle :: Image_ -> Triangle -> [Point]
-getPointsInTriangle image (p1', p2', p3') = (ptsBtween (p1, p3) (p1, p2)) ++
-                                            (ptsBtween (p1, p3) (p2, p3))
+getPointsInTriangle image (p1', p2', p3') = (ptsBtween (makeLine p1 p3) (makeLine p1 p2)) ++
+                                            (ptsBtween (makeLine p1 p3) (makeLine p2 p3))
     where
         sortedPoints = sortOn snd [p1', p2', p3']
 
@@ -83,13 +150,13 @@ blendEqually colors = C.affineCombo (zip (repeat fraction) colors) $ head colors
         fraction = 1.0 / (fromIntegral . length $ colors)
 
 getTriangleAverageRGB :: Image_ -> Triangle -> C.Colour Double
-getTriangleAverageRGB image triangle = blendEqually . map tosRGB' $  pixels
+getTriangleAverageRGB image triangle = traceShow triangle $ blendEqually . map tosRGB' $  pixels
     where
         nPixels :: Pixel RGB Double
         nPixels = fromIntegral $ length pixels
 
         pixels :: [Pixel_]
-        pixels = map (index image) points
+        pixels = catMaybes . map (maybeIndex image) $ points
 
         points :: [Point]
         points = getPointsInTriangle image triangle
@@ -98,21 +165,13 @@ getTriangleAverageRGB image triangle = blendEqually . map tosRGB' $  pixels
 --     where
 --         sortedPts = sortOn snd [p1, p2, p3]
 
-ptsBtween :: (Point, Point) -> (Point, Point) -> [Point]
-ptsBtween (l1p1, l1p2) (l2p1, l2p2) = concatMap rasterLine [startingX .. endingX]
+ptsBtween :: Line -> Line -> [Point]
+ptsBtween l1 l2 = concatMap rasterLine [startingX .. endingX]
     where
-        l1 = makeLine l1p1 l1p2
-        l2 = makeLine l2p1 l2p2
-
-        l1Xs = map snd [l1p1, l1p2]
-        l2Xs = map snd [l2p1, l2p2]
-
-        startingX = max (minimum l1Xs) (minimum l2Xs)
-        endingX   = min (maximum l1Xs) (maximum l2Xs)
+        startingX = max (startX l1) (startX l2)
+        endingX   = min (endX l1) (endX l2)
 
         rasterLine x = map (\y -> (y, x)) $ range' (yAt l1 x) (yAt l2 x)
-
-        
 
         
 range' :: Int -> Int -> [Int]
@@ -124,7 +183,12 @@ yAt (Line {m = m, b = b}) x = round $ (m * (fromIntegral x)) + b
 -- y = mx + b
 -- y - mx = b
 makeLine :: Point -> Point -> Line
-makeLine (y1, x1) (y2, x2) = Line {m = slope, b = (fromIntegral y1) - (slope * (fromIntegral x1))}
+makeLine (y1, x1) (y2, x2) = Line {
+    m = slope, 
+    b = (fromIntegral y1) - (slope * (fromIntegral x1)),
+    startX = min x1 x2,
+    endX = max x1 x2
+                                  }
     where
         slope = (y1 - y2) `doubleDiv` (x1 - x2)
 
@@ -133,7 +197,9 @@ doubleDiv a b = (fromIntegral a) / (fromIntegral b)
 data Line = Line
     {
         m :: Double,
-        b :: Double
+        b :: Double,
+        startX :: Int,
+        endX :: Int
     }
 
 isPointInTriangle :: Triangle -> Point -> Bool

@@ -20,13 +20,18 @@ renderTri image t = reflectY . Ren.makeTriangle (Ren.toPointList dims t) $ col
         dims = (cols image, rows image)
         col = Tri.getTriangleAverageRGB image $ t
 
-main :: IO ()
-main = do
-    image <- readImageRGB VU "sierra.jpg"
-    gen <- getStdGen
+
+main = mainWith genImage
+
+
+genImage :: String -> Int -> Double -> Int -> IO (Diagram B)
+genImage name triNum areaCoeff randSeed = do
+    image <- readImageRGB VU name
+    gen <- if randSeed == 0 then getStdGen else return $ mkStdGen randSeed
     print gen
     let dims = (cols image, rows image)
-    let triangleList = sortOn (negate . Tri.area) . take 150 . map (Tri.getRandomTriangle image) . genList $ gen
+    let numCandidates = round $ (fromIntegral triNum) / areaCoeff
+    let triangleList = take triNum $ sortOn Tri.area . take numCandidates . map (Tri.getRandomTriangle image) . genList $ gen
     -- print $ map Tri.area $ take 20 $ triangleList
     -- print $ Tri.area . last $ triangleList
-    mainWith . mconcat . withStrategy (parListChunk 50 rseq) . map (renderTri image) $ triangleList
+    return $  mconcat . withStrategy (parListChunk 50 rseq) . map (renderTri image) $ triangleList
