@@ -23,6 +23,9 @@ type Pixel_ = Pixel RGB Double
 type Point = (Int, Int)
 type Triangle = (Point, Point, Point)
 
+sharesCoords ((x1, y1), (x2, y2), (x3, y3)) = ((/= 3) . length . nub $ [x1, x2, x3])
+                                          || ((/= 3) . length . nub $ [y1, y2, y3])
+
 shoelace :: [Point] -> Double 
 shoelace pts = halve . sum $ zipWith (*) (zipWith (+) xs' xs) (zipWith (-) ys' ys)
     where
