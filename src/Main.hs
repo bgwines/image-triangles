@@ -33,9 +33,9 @@ renderTriangles
     -> Double
     -> Int
     -> [QDiagram SVG V2 Double Any]
-renderTriangles image nRounds dimensions gen areaCoeff round' = map f triangles
+renderTriangles image nRounds dimensions gen areaCoeff round' = map renderTriangle triangles
     where
-        f t = reflectY $ Ren.makeTriangle (Ren.toPointList dimensions t) col opacity
+        renderTriangle t = reflectY $ Ren.makeTriangle (Ren.toPointList dimensions t) col opacity
             where
                 col :: C.Colour Double
                 col = Tri.getTriangleAverageRGB image t dimensions
@@ -65,7 +65,7 @@ genImage name nRounds areaCoeff randSeed = do
     gen <- if randSeed == 0 then getStdGen else return $ mkStdGen randSeed
     let renderTriangles' = renderTriangles img' nRounds dimensions gen areaCoeff
     let rounds :: [Int] = [1..nRounds]
-    return $ center . mconcat . withStrategy (parListChunk 2000 rseq) . concatMap renderTriangles' $ rounds
+    return $ center . mconcat . withStrategy (parListChunk 800 rseq) . concatMap renderTriangles' $ rounds
 
 main :: IO ()
 main = mainWith genImage
