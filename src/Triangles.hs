@@ -9,17 +9,16 @@
 
 module Triangles where
 
-import Graphics.Image hiding (map, zipWith, sum, minimum, maximum)
 import System.Random
 import qualified Data.Colour.SRGB as C
 import qualified Data.Colour as C
-import qualified Graphics.Image.ColorSpace as G
 import Data.List
 import Data.Maybe
-import Debug.Trace
+import qualified Data.Vector as Vec
 
-type Image_ = Image VU RGB Double
-type Pixel_ = Pixel RGB Double
+
+type Image_ = Vec.Vector Pixel_
+type Pixel_ = C.Colour Double
 type Point = (Int, Int)
 type Triangle = (Point, Point, Point)
 
@@ -50,22 +49,22 @@ area (p1, p2, p3) = shoelace' $ [p1, p2, p3]
             (fromIntegral (x1 * y2 + x2 * y3 + x3 * y1
                          - x1 * y3 - x2 * y1 - x3 - y2)) / 2.0
 
-getRandomPixel :: StdGen -> Image_ -> (Int, Int)
-getRandomPixel gen image =
-    ( getCoord gen  . pred . rows $ image
-    , getCoord gen' . pred . cols $ image)
+getRandomPixel :: StdGen -> (Int, Int) -> (Int, Int)
+getRandomPixel gen (rows, cols) =
+    ( getCoord gen  . pred $ rows
+    , getCoord gen' . pred $ cols)
     where
         getCoord :: StdGen -> Int -> Int
-        getCoord gen = fst . (flip randomR) gen . (1,)
+        getCoord gen = fst . (flip randomR) gen . (0,)
 
         gen' = snd . next $ gen
 
 first3 (a : b : c : _) = (a, b, c)
 
-getRandomTriangle :: Image_ -> StdGen -> Triangle
-getRandomTriangle image gen = (p1, p2, p3)
+getRandomTriangle :: (Int, Int) -> StdGen -> Triangle
+getRandomTriangle dims gen = (p1, p2, p3)
     where
-        p1 : p2 : _ = map (\x -> getRandomPixel x image) genList
+        p1 : p2 : _ = map (\x -> getRandomPixel x dims) genList
         
         genList = tail . iterate (snd . next) $ gen
 
@@ -145,24 +144,28 @@ getPointsInTriangle image (p1', p2', p3') = (ptsBtween (makeLine p1 p3) (makeLin
     
 
 
-
-tosRGB' (G.PixelRGB r g b) = C.sRGB r g b
-
-blendEqually colors = C.affineCombo (zip (repeat fraction) colors) $ head colors
+blendEqually colors = C.affineCombo (zip (repeat fraction) colors) $ C.black 
     where
         fraction = 1.0 / (fromIntegral . length $ colors)
 
-getTriangleAverageRGB :: Image_ -> Triangle -> C.Colour Double
-getTriangleAverageRGB image triangle = traceShow triangle $ blendEqually . map tosRGB' $  pixels
+getTriangleAverageRGB :: Image_ -> Triangle -> (Int, Int) -> C.Colour Double
+getTriangleAverageRGB image triangle (y', x') = blendEqually $  pixels
     where
-        nPixels :: Pixel RGB Double
-        nPixels = fromIntegral $ length pixels
 
         pixels :: [Pixel_]
-        pixels = catMaybes . map (maybeIndex image) $ points
+        pixels = catMaybes . map index' $ points
 
         points :: [Point]
         points = getPointsInTriangle image triangle
+
+        index' :: (Int, Int) -> Maybe Pixel_
+        index' (y, x)
+            | y >= y' = Nothing
+            | x >= x' = Nothing
+            | y < 0   = Nothing
+            | x < 0   = Nothing
+            | otherwise = image Vec.!? ((y * x') + x)
+
 
 -- pointsInTriangle image (p1, p2, p3) = 
 --     where

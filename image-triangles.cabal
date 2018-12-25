@@ -57,7 +57,7 @@ executable image-triangles
   other-extensions:    TupleSections
 
   -- Other library packages from which modules are imported.
-  build-depends:       base, random, hip, colour, diagrams-lib, diagrams-svg, parallel
+  build-depends:       base, random, hip, colour, diagrams-lib, diagrams-svg, parallel, repa, vector
 
   -- Directories containing source files.
   hs-source-dirs:      src
