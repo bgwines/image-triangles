@@ -46,7 +46,7 @@ renderTriangles image nRounds dimensions gen areaCoeff round' = map f triangles
         numCandidates = round $ (fromIntegral nTrianglesPerRound) / areaCoeff
 
         opacity :: Double
-        opacity = 0.2 -- round / nRounds
+        opacity = fromIntegral round' / fromIntegral nRounds
 
         triangles
             = take nTrianglesPerRound
@@ -65,7 +65,7 @@ genImage name nRounds areaCoeff randSeed = do
     gen <- if randSeed == 0 then getStdGen else return $ mkStdGen randSeed
     let renderTriangles' = renderTriangles img' nRounds dimensions gen areaCoeff
     let rounds :: [Int] = [1..nRounds]
-    return $ center . mconcat . withStrategy (parListChunk 500 rseq) . concatMap renderTriangles' $ rounds
+    return $ center . mconcat . withStrategy (parListChunk 2000 rseq) . concatMap renderTriangles' $ rounds
 
 main :: IO ()
 main = mainWith genImage
