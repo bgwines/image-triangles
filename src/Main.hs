@@ -4,7 +4,7 @@ module Main where
 
 import qualified Triangles as Tri
 import qualified Render    as Ren
-import Graphics.Image hiding (map)
+import Graphics.Image as Img hiding (map, zipWith)
 import System.Random
 import qualified Graphics.Image.ColorSpace as G
 import qualified Data.Colour.SRGB as C
@@ -32,13 +32,11 @@ renderTriangles
     -> (Int, Int)
     -> Double
     -> Int
+    -> StdGen
     -> Int
-    -> Int
-    -> IO [QDiagram SVG V2 Double Any]
-renderTriangles image nRounds dimensions areaCoeff nTrianglesPerRound randSeed round'
-    = do
-        gen' <- gen
-        return $ map renderTriangle (triangles gen')
+    -> QDiagram SVG V2 Double Any
+renderTriangles image nRounds dimensions areaCoeff nTrianglesPerRound gen round'
+    = mconcat . map renderTriangle $ triangles
     where
         renderTriangle t = reflectY $ Ren.makeTriangle (Ren.toPointList dimensions t) col opacity
             where
@@ -50,26 +48,25 @@ renderTriangles image nRounds dimensions areaCoeff nTrianglesPerRound randSeed r
         opacity :: Double
         opacity = fromIntegral round' / fromIntegral nRounds
 
-        gen :: IO StdGen
-        gen = if randSeed == 0 then getStdGen else return $ mkStdGen randSeed
 
-        triangles gen''
+        triangles
             = take nTrianglesPerRound
             $ sortOn Tri.area
             . take numCandidates
             . filter (not . Tri.sharesCoords)
             . map (Tri.getRandomTriangle dimensions)
             . genList
-            $ gen''
+            $ gen
 
 genImage :: String -> Int -> Int -> Double -> Int -> IO (Diagram B)
 genImage name nRounds nTrianglesPerRound areaCoeff randSeed = do
-    image <- readImageRGB VU name
+    image <- Img.readImageRGB VU name
     let img' = convImage image
     let dimensions = (rows image, cols image)
-    let renderTriangles' = renderTriangles img' nRounds dimensions areaCoeff nTrianglesPerRound randSeed
-    triangles <- sequence . map renderTriangles' $ [1..nRounds]
-    return $ center . mconcat . withStrategy (parListChunk 800 rseq) . concat $ triangles
+    let renderTriangles' = renderTriangles img' nRounds dimensions areaCoeff nTrianglesPerRound
+    gen <- if randSeed == 0 then getStdGen else return $ mkStdGen randSeed
+    let triangles = zipWith renderTriangles' (genList gen) $ [1..nRounds]
+    return $ center . mconcat . withStrategy (parListChunk 800 rseq) $ triangles
 
 main :: IO ()
 main = mainWith genImage
