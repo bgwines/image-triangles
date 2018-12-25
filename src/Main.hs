@@ -15,6 +15,7 @@ import Control.Parallel.Strategies
 import qualified Graphics.Image.Interface.Repa as Img
 import qualified Data.Array.Repa as R
 import qualified Data.Vector as Vec
+import qualified Debug.Trace as DT
 
 genList :: StdGen -> [StdGen]
 genList = map mkStdGen . randoms
@@ -32,16 +33,15 @@ renderTriangles
     -> StdGen
     -> Double
     -> Int
+    -> Int
     -> [QDiagram SVG V2 Double Any]
-renderTriangles image nRounds dimensions gen areaCoeff round' = map renderTriangle triangles
+renderTriangles image nRounds dimensions gen areaCoeff nTrianglesPerRound round'
+    = DT.traceShow opacity $ map renderTriangle triangles
     where
         renderTriangle t = reflectY $ Ren.makeTriangle (Ren.toPointList dimensions t) col opacity
             where
                 col :: C.Colour Double
                 col = Tri.getTriangleAverageRGB image t dimensions
-        
-        nTrianglesPerRound :: Int
-        nTrianglesPerRound = 100
 
         numCandidates = round $ (fromIntegral nTrianglesPerRound) / areaCoeff
 
@@ -57,15 +57,14 @@ renderTriangles image nRounds dimensions gen areaCoeff round' = map renderTriang
             . genList
             $ gen
 
-genImage :: String -> Int -> Double -> Int -> IO (Diagram B)
-genImage name nRounds areaCoeff randSeed = do
+genImage :: String -> Int -> Int -> Double -> Int -> IO (Diagram B)
+genImage name nRounds nTrianglesPerRound areaCoeff randSeed = do
     image <- readImageRGB VU name
     let img' = convImage image
     let dimensions = (rows image, cols image)
     gen <- if randSeed == 0 then getStdGen else return $ mkStdGen randSeed
-    let renderTriangles' = renderTriangles img' nRounds dimensions gen areaCoeff
-    let rounds :: [Int] = [1..nRounds]
-    return $ center . mconcat . withStrategy (parListChunk 800 rseq) . concatMap renderTriangles' $ rounds
+    let renderTriangles' = renderTriangles img' nRounds dimensions gen areaCoeff nTrianglesPerRound
+    return $ center . mconcat . withStrategy (parListChunk 800 rseq) . concatMap renderTriangles' $ [1..nRounds]
 
 main :: IO ()
 main = mainWith genImage
