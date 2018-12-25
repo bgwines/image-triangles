@@ -30,13 +30,15 @@ renderTriangles
     :: Vec.Vector (Colour Double)
     -> Int
     -> (Int, Int)
-    -> StdGen
     -> Double
     -> Int
     -> Int
-    -> [QDiagram SVG V2 Double Any]
-renderTriangles image nRounds dimensions gen areaCoeff nTrianglesPerRound round'
-    = DT.traceShow opacity $ map renderTriangle triangles
+    -> Int
+    -> IO [QDiagram SVG V2 Double Any]
+renderTriangles image nRounds dimensions areaCoeff nTrianglesPerRound randSeed round'
+    = do
+        gen' <- gen
+        return $ map renderTriangle (triangles gen')
     where
         renderTriangle t = reflectY $ Ren.makeTriangle (Ren.toPointList dimensions t) col opacity
             where
@@ -48,23 +50,26 @@ renderTriangles image nRounds dimensions gen areaCoeff nTrianglesPerRound round'
         opacity :: Double
         opacity = fromIntegral round' / fromIntegral nRounds
 
-        triangles
+        gen :: IO StdGen
+        gen = if randSeed == 0 then getStdGen else return $ mkStdGen randSeed
+
+        triangles gen''
             = take nTrianglesPerRound
             $ sortOn Tri.area
             . take numCandidates
             . filter (not . Tri.sharesCoords)
             . map (Tri.getRandomTriangle dimensions)
             . genList
-            $ gen
+            $ gen''
 
 genImage :: String -> Int -> Int -> Double -> Int -> IO (Diagram B)
 genImage name nRounds nTrianglesPerRound areaCoeff randSeed = do
     image <- readImageRGB VU name
     let img' = convImage image
     let dimensions = (rows image, cols image)
-    gen <- if randSeed == 0 then getStdGen else return $ mkStdGen randSeed
-    let renderTriangles' = renderTriangles img' nRounds dimensions gen areaCoeff nTrianglesPerRound
-    return $ center . mconcat . withStrategy (parListChunk 800 rseq) . concatMap renderTriangles' $ [1..nRounds]
+    let renderTriangles' = renderTriangles img' nRounds dimensions areaCoeff nTrianglesPerRound randSeed
+    triangles <- sequence . map renderTriangles' $ [1..nRounds]
+    return $ center . mconcat . withStrategy (parListChunk 800 rseq) . concat $ triangles
 
 main :: IO ()
 main = mainWith genImage
