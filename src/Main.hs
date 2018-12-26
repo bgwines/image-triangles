@@ -66,7 +66,7 @@ genImage name nRounds nTrianglesPerRound areaCoeff randSeed = do
     let renderTriangles' = renderTriangles img' nRounds dimensions areaCoeff nTrianglesPerRound
     gen <- if randSeed == 0 then getStdGen else return $ mkStdGen randSeed
     let triangles = zipWith renderTriangles' (genList gen) $ [1..nRounds]
-    return $ center . mconcat . withStrategy (parListChunk 800 rseq) $ triangles
+    return $ center . mconcat . withStrategy (parListChunk 800 rseq) $ reverse triangles
 
 main :: IO ()
 main = mainWith genImage
