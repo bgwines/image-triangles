@@ -48,13 +48,18 @@ renderTriangles image nRounds dimensions areaCoeff nTrianglesPerRound gen round'
         opacity :: Double
         opacity = fromIntegral round' / fromIntegral nRounds
 
-
+        area :: Maybe Double
+        area = Just $ (\y -> DT.traceShow (round', y) y) $ 1 - (x + 0.1)
+            where
+                -- 0.000, 0.333, 0.666
+                x = fromIntegral (round' - 1) / fromIntegral nRounds
+        
         triangles
             = take nTrianglesPerRound
             $ sortOn Tri.area
             . take numCandidates
             . filter (not . Tri.sharesCoords)
-            . map (Tri.getRandomTriangle dimensions)
+            . map (Tri.getRandomTriangle dimensions area)
             . genList
             $ gen
 
