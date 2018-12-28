@@ -61,11 +61,25 @@ getRandomPixel gen (rows, cols) =
 
 first3 (a : b : c : _) = (a, b, c)
 
-getRandomTriangle :: (Int, Int) -> StdGen -> Triangle
-getRandomTriangle dims gen = (p1, p2, p3)
+getP2 gen (x0, y0) r = (x0 + x, y0 + y)
+    where 
+        phi = fst . randomR (0.0, pi * 2) $ gen
+        x = round $ r * cos phi
+        y = round $ r * sin phi
+
+
+
+
+getRandomTriangle :: (Int, Int) -> Maybe Double -> StdGen -> Triangle
+getRandomTriangle dims area gen = (p1, p2, p3)
     where
-        p1 : p2 : _ = map (\x -> getRandomPixel x dims) genList
-        
+        p1 : p2' : _ = map (\x -> getRandomPixel x dims) genList
+
+        p2 = case area of 
+               Nothing -> p2'
+               Just a -> getP2 gen p1 $ a * (fromIntegral $ (uncurry min) dims)
+
+
         genList = tail . iterate (snd . next) $ gen
 
         p3 = getThirdPoint p1 p2 gen (pi / 10.0)
