@@ -17,6 +17,20 @@ import qualified Data.Array.Repa as R
 import qualified Data.Vector as Vec
 import qualified Debug.Trace as DT
 
+data Options = Options {
+                    nRounds :: Int,
+                    nTrianglesPerRound :: Int,
+                    gen :: Maybe StdGen
+               }
+
+defaultOpts  = Options {
+                    nRounds = 3,
+                    nTrianglesPerRound = 100,
+                    gen = Nothing
+                  }
+
+
+
 genList :: StdGen -> [StdGen]
 genList = map mkStdGen . randoms
 
@@ -58,8 +72,9 @@ renderTriangles image nRounds dimensions areaCoeff nTrianglesPerRound gen round'
             . genList
             $ gen
 
-genImage :: String -> Int -> Int -> Double -> Int -> IO (Diagram B)
-genImage name nRounds nTrianglesPerRound areaCoeff randSeed = do
+genImage :: String -> Int -> Int -> Double ->  IO (Diagram B)
+genImage name areaCoeff = do
+    let 
     image <- Img.readImageRGB VU name
     let img' = convImage image
     let dimensions = (rows image, cols image)
