@@ -25,7 +25,7 @@ data Options = Options {
 
 -- modify this to your liking
 defaultOpts  = Options {
-                    numTriangles = 3000,
+                    numTriangles = 10000,
                     gen = Nothing
                   }
 
@@ -39,6 +39,7 @@ convImage :: Image VU G.RGB Double -> Vec.Vector (Colour Double)
 convImage = Vec.map tosRGB' . Vec.convert . R.toUnboxed . Img.toRepaArray
 
 -- progress goes from 0 to 1 the farther we get along the process
+-- note, 0 represents the topmost triangle
 renderTri :: Vec.Vector (Colour Double) -> (Int, Int) -> StdGen -> Double -> QDiagram SVG V2 Double Any
 renderTri image dimensions gen progress = Ren.makeTriangle (Ren.toPointList dimensions triangle) color opacity'
     where
@@ -50,9 +51,9 @@ renderTri image dimensions gen progress = Ren.makeTriangle (Ren.toPointList dime
         -- the following should be considered triangle shaders
         -- modify them to your liking, their outputs are expected to be in [0, 1]
         
-        opacity' = 0.1 + (progress) * 0.8
+        opacity' = 0.4 + (1 - progress) * 0.6
         
-        area = 0.05 + (1 - progress) * 0.2
+        area = (progress ** 2) * 0.2
 
 
 
