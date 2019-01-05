@@ -22,8 +22,9 @@ type Pixel_ = C.Colour Double
 type Point = (Int, Int)
 type Triangle = (Point, Point, Point)
 
+sharesCoords :: Triangle -> Bool
 sharesCoords ((x1, y1), (x2, y2), (x3, y3)) = ((/= 3) . length . nub $ [x1, x2, x3])
-                                          || ((/= 3) . length . nub $ [y1, y2, y3])
+                                           || ((/= 3) . length . nub $ [y1, y2, y3])
 
 shoelace :: [Point] -> Double 
 shoelace pts = halve . sum $ zipWith (*) (zipWith (+) xs' xs) (zipWith (-) ys' ys)
@@ -40,7 +41,6 @@ shoelace' [(y1, x1), (y2, x2), (y3, x3)] =  abs $ (* 0.5) . fromIntegral $ x1*y2
 
 area :: Triangle -> Double
 area (p1, p2, p3) = shoelace' $ [p1, p2, p3]
--- area (p1, p2, p3) = abs . ccArea . swapForCounterClockwise . sortOn fst $ [p1, p2, p3]
     where
         swapForCounterClockwise [a, b, c] = if snd a < snd b
                                                then [a, b, c]
@@ -59,16 +59,16 @@ getRandomPixel gen (rows, cols) =
 
         gen' = snd . next $ gen
 
+first3 :: [a] -> (a, a, a)
 first3 (a : b : c : _) = (a, b, c)
 
 getP2 :: StdGen -> (Int, Int) -> Double -> (Int, Int)
-getP2 gen (x0, y0) r = (x0 + x, y0 + y)
+getP2 gen (x0, y0) r' = (x0 + x, y0 + y)
     where 
+        r = max 2.0 r' 
         phi = fst . randomR (0.0, pi * 2) $ gen
         x = round $ r * cos phi
         y = round $ r * sin phi
-
-
 
 
 getRandomTriangle :: (Int, Int) -> Maybe Double -> StdGen -> Triangle
@@ -84,14 +84,6 @@ getRandomTriangle dims area gen = (p1, p2, p3)
         gen0 : gen1 : genList = tail . iterate (snd . next) $ gen
 
         p3 = getThirdPoint p1 p2 gen0 (pi / 10.0)
-
--- y = mx + b
--- y = m'x + b'
-
--- m'x + b' = mx + b
--- m'x - mx = b - b'
--- x(m' - m) = b - b'
--- x = (b - b') / (m' - m)
 
 angleIntersect :: (Point, Double) -> (Point, Double) -> Point
 angleIntersect ((y1, x1), angle1) ((y2, x2), angle2) = (round y3, round x3)
@@ -153,12 +145,6 @@ getPointsInTriangle image (p1', p2', p3') = (ptsBtween (makeLine p1 p3) (makeLin
         p2 = sortedPoints !! 1
         p3 = sortedPoints !! 2
 
--- getPointsInTriangle image triangle =
-    -- = filter (isPointInTriangle triangle)
-    -- $ (,) <$> [0..(rows image)] <*> [0..(cols image)]
-    
-
-
 blendEqually colors = C.affineCombo (zip (repeat fraction) colors) $ C.black 
     where
         fraction = 1.0 / (fromIntegral . length $ colors)
@@ -182,18 +168,17 @@ getTriangleAverageRGB image triangle (y', x') = blendEqually $  pixels
             | otherwise = image Vec.!? ((y * x') + x)
 
 
--- pointsInTriangle image (p1, p2, p3) = 
---     where
---         sortedPts = sortOn snd [p1, p2, p3]
-
 ptsBtween :: Line -> Line -> [Point]
-ptsBtween l1 l2 = concatMap rasterLine [startingX .. endingX]
+ptsBtween l1 l2 = concatMap rasterLine . noSingletons $ [startingX .. endingX]
     where
         startingX = max (startX l1) (startX l2)
         endingX   = min (endX l1) (endX l2)
 
         rasterLine x = map (\y -> (y, x)) $ range' (yAt l1 x) (yAt l2 x)
 
+noSingletons :: [a] -> [a]
+noSingletons [x] = []
+noSingletons l   = l
         
 range' :: Int -> Int -> [Int]
 range' a b = [(min a b) .. (max a b)]

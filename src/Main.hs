@@ -10,6 +10,7 @@ import qualified Graphics.Image.ColorSpace as G
 import qualified Data.Colour.SRGB as C
 import Diagrams.Backend.SVG.CmdLine
 import Diagrams.Prelude
+import Debug.Trace
 import Data.List
 import Control.Parallel.Strategies
 import qualified Graphics.Image.Interface.Repa as Img
@@ -18,18 +19,15 @@ import qualified Data.Vector as Vec
 import qualified Debug.Trace as DT
 
 data Options = Options {
-                    nRounds :: Int,
-                    nTrianglesPerRound :: Int,
+                    numTriangles :: Int,
                     gen :: Maybe StdGen
                }
 
+-- modify this to your liking
 defaultOpts  = Options {
-                    nRounds = 3,
-                    nTrianglesPerRound = 100,
+                    numTriangles = 3000,
                     gen = Nothing
                   }
-
-
 
 genList :: StdGen -> [StdGen]
 genList = map mkStdGen . randoms
@@ -40,53 +38,37 @@ tosRGB' (G.PixelRGB r g b) = C.sRGB r g b
 convImage :: Image VU G.RGB Double -> Vec.Vector (Colour Double)
 convImage = Vec.map tosRGB' . Vec.convert . R.toUnboxed . Img.toRepaArray
 
-renderTriangles
-    :: Vec.Vector (Colour Double)
-    -> Int
-    -> (Int, Int)
-    -> Double
-    -> Int
-    -> StdGen
-    -> Int
-    -> QDiagram SVG V2 Double Any
-renderTriangles image nRounds dimensions areaCoeff nTrianglesPerRound gen round'
-    = mconcat . map renderTriangle $ triangles
+-- progress goes from 0 to 1 the farther we get along the process
+renderTri :: Vec.Vector (Colour Double) -> (Int, Int) -> StdGen -> Double -> QDiagram SVG V2 Double Any
+renderTri image dimensions gen progress = Ren.makeTriangle (Ren.toPointList dimensions triangle) color opacity'
     where
-        renderTriangle t = reflectY $ Ren.makeTriangle (Ren.toPointList dimensions t) col opacity
-            where
-                col :: C.Colour Double
-                col = Tri.getTriangleAverageRGB image t dimensions
 
-        numCandidates = round $ (fromIntegral nTrianglesPerRound) / areaCoeff
-
-        opacity :: Double
-        opacity = fromIntegral round' / fromIntegral nRounds
-
-        area :: Maybe Double
-        area = Just $ (\y -> DT.traceShow (round', y) y) $ 1 - (x + 0.1)
-            where
-                -- 0.000, 0.333, 0.666
-                x = fromIntegral (round' - 1) / fromIntegral nRounds
+        triangle = Tri.getRandomTriangle dimensions (Just area) gen
         
-        triangles
-            = take nTrianglesPerRound
-            $ sortOn Tri.area
-            . take numCandidates
-            . filter (not . Tri.sharesCoords)
-            . map (Tri.getRandomTriangle dimensions area)
-            . genList
-            $ gen
+        color = Tri.getTriangleAverageRGB image triangle dimensions
+        
+        -- the following should be considered triangle shaders
+        -- modify them to your liking, their outputs are expected to be in [0, 1]
+        
+        opacity' = 0.1 + (progress) * 0.8
+        
+        area = 0.05 + (1 - progress) * 0.2
 
-genImage :: String -> Int -> Int -> Double ->  IO (Diagram B)
-genImage name areaCoeff = do
-    let 
+
+
+
+genImage :: String -> IO (Diagram B)
+genImage name = do
+    let (Options {numTriangles = numTriangles, gen = gen'}) = defaultOpts
+    gen'' <- case gen' of
+                        Nothing -> getStdGen
+                        Just a  -> return a
     image <- Img.readImageRGB VU name
     let img' = convImage image
     let dimensions = (rows image, cols image)
-    let renderTriangles' = renderTriangles img' nRounds dimensions areaCoeff nTrianglesPerRound
-    gen <- if randSeed == 0 then getStdGen else return $ mkStdGen randSeed
-    let triangles = zipWith renderTriangles' (genList gen) $ [1..nRounds]
-    return $ center . mconcat . withStrategy (parListChunk 800 rseq) $ reverse triangles
+    print gen''
+    let progressList = map (/ (fromIntegral numTriangles))  [0.0 .. (fromIntegral numTriangles)]
+    return $ center . reflectY . mconcat . withStrategy (parListChunk 75 rseq) $ zipWith (renderTri img' dimensions) (genList gen'') progressList
 
 main :: IO ()
 main = mainWith genImage
