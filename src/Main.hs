@@ -1,5 +1,3 @@
-{-# LANGUAGE ScopedTypeVariables #-}
-
 module Main where
 
 import qualified Triangles as Tri
@@ -7,7 +5,7 @@ import qualified Render    as Ren
 import Graphics.Image as Img hiding (map, zipWith)
 import System.Random
 import qualified Graphics.Image.ColorSpace as G
-import qualified Data.Colour.SRGB as C
+import qualified Data.Colour.SRGB.Linear as CL
 import Diagrams.Backend.SVG.CmdLine
 import Diagrams.Prelude
 import Debug.Trace
@@ -32,10 +30,11 @@ defaultOpts  = Options {
 genList :: StdGen -> [StdGen]
 genList = map mkStdGen . randoms
 
-tosRGB' :: (Ord b, Floating b) => Pixel G.RGB b -> Colour b
-tosRGB' (G.PixelRGB r g b) = C.sRGB r g b
+-- CL.rgb might be the wrong fn...
+tosRGB' :: (Ord b, Floating b) => Pixel G.RGB b -> CL.Colour b
+tosRGB' (G.PixelRGB r g b) = CL.rgb r g b
 
-convImage :: Image VU G.RGB Double -> Vec.Vector (Colour Double)
+
 convImage = Vec.map tosRGB' . Vec.convert . R.toUnboxed . Img.toRepaArray
 
 -- progress goes from 0 to 1 the farther we get along the process
@@ -44,7 +43,7 @@ renderTri :: Vec.Vector (Colour Double) -> (Int, Int) -> StdGen -> Double -> QDi
 renderTri image dimensions gen progress = Ren.makeTriangle (Ren.toPointList dimensions triangle) color opacity'
     where
 
-        triangle = Tri.getRandomTriangle dimensions (Just area) gen
+        triangle = Tri.getRandomTriangle image dimensions (Just area) gen
         
         color = Tri.getTriangleAverageRGB image triangle dimensions
         

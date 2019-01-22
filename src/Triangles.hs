@@ -10,11 +10,12 @@
 module Triangles where
 
 import System.Random
-import qualified Data.Colour.SRGB as C
+import qualified Data.Colour.SRGB.Linear as C
 import qualified Data.Colour as C
 import Data.List
 import Data.Maybe
 import qualified Data.Vector as Vec
+import Data.Fixed
 
 
 type Image_ = Vec.Vector Pixel_
@@ -40,7 +41,7 @@ shoelace' :: [Point] -> Double
 shoelace' [(y1, x1), (y2, x2), (y3, x3)] =  abs $ (* 0.5) . fromIntegral $ x1*y2 + x2*y3 + x3*y1 - x2*y1 - x3*y2 - x1*y3
 
 area :: Triangle -> Double
-area (p1, p2, p3) = shoelace' $ [p1, p2, p3]
+area (p1, p2, p3) = shoelace' [p1, p2, p3]
     where
         swapForCounterClockwise [a, b, c] = if snd a < snd b
                                                then [a, b, c]
@@ -62,23 +63,27 @@ getRandomPixel gen (rows, cols) =
 first3 :: [a] -> (a, a, a)
 first3 (a : b : c : _) = (a, b, c)
 
-getP2 :: StdGen -> (Int, Int) -> Double -> (Int, Int)
-getP2 gen (x0, y0) r' = (x0 + x, y0 + y)
+-- colorComp :: Image_ -> (Int, Int) -> (Int, Int)
+-- colorComp img p1 p2 = comp ( p1)
+
+getP2 :: Image_ -> StdGen -> (Int, Int) -> Double -> (Int, Int)
+getP2 image gen (x0, y0) r' = (x0 + x, y0 + y)
     where 
         r = max 2.0 r' 
         phi = fst . randomR (0.0, pi * 2) $ gen
+        phi' = map (\x -> (x + phi) `mod'` (2 * pi)) [0, pi / 2, pi, 3 * pi / 2]
         x = round $ r * cos phi
         y = round $ r * sin phi
 
 
-getRandomTriangle :: (Int, Int) -> Maybe Double -> StdGen -> Triangle
-getRandomTriangle dims area gen = (p1, p2, p3)
+getRandomTriangle :: Image_ -> (Int, Int) -> Maybe Double -> StdGen -> Triangle
+getRandomTriangle image dims area gen = (p1, p2, p3)
     where
         p1 : p2' : _ = map (\x -> getRandomPixel x dims) genList
 
         p2 = case area of 
                Nothing -> p2'
-               Just a -> getP2 gen1 p1 $ a * (fromIntegral $ (uncurry min) dims)
+               Just a -> getP2 image gen1 p1 $ a * (fromIntegral $ (uncurry min) dims)
 
 
         gen0 : gen1 : genList = tail . iterate (snd . next) $ gen
@@ -158,7 +163,8 @@ getTriangleAverageRGB image triangle (y', x') = blendEqually $  pixels
 
         points :: [Point]
         points = getPointsInTriangle image triangle
-
+        
+        -- I got so upset that I put this function in here instead of in general scope that I went to bed for the night.
         index' :: (Int, Int) -> Maybe Pixel_
         index' (y, x)
             | y >= y' = Nothing
