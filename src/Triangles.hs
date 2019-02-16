@@ -1,5 +1,4 @@
-{-# LANGUAGE TupleSections #-}
-
+{-# LANGUAGE TupleSections, TypeFamilies, MultiParamTypeClasses, TemplateHaskell, TypeSynonymInstances, FlexibleInstances #-}
 -- module Triangles
 -- ( getRandomPixel
 -- , getRandomTriangle
@@ -12,16 +11,32 @@ module Triangles where
 import System.Random
 import qualified Data.Colour.SRGB.Linear as C
 import qualified Data.Colour as C
+import Data.Colour.SRGB.Linear (Colour)
+import Data.Vector.Generic.Base (Vector)
+import Data.Vector.Generic.Mutable (MVector)
 import Data.List
 import Data.Maybe
-import qualified Data.Vector as Vec
+import qualified Data.Vector.Unboxed as Vec
 import Data.Fixed
-
+import Data.Vector.Unboxed.Deriving 
 
 type Image_ = Vec.Vector Pixel_
-type Pixel_ = C.Colour Double
+type Pixel_ = Colour Double
 type Point = (Int, Int)
 type Triangle = (Point, Point, Point)
+
+toSRGBTuple :: Pixel_ -> (Double, Double, Double)
+toSRGBTuple = srgb' . C.toRGB
+    where
+        srgb' (C.RGB {C.channelRed = red, C.channelGreen = green, C.channelBlue = blue}) = (red, green, blue)
+
+fromSRGBTuple :: (Double, Double, Double) -> Pixel_
+fromSRGBTuple (r, g, b) = C.rgb r g b
+
+derivingUnbox "Pixel_"
+    [t| Pixel_ -> (Double, Double, Double)|]
+    [| toSRGBTuple |]
+    [| fromSRGBTuple |]
 
 sharesCoords :: Triangle -> Bool
 sharesCoords ((x1, y1), (x2, y2), (x3, y3)) = ((/= 3) . length . nub $ [x1, x2, x3])

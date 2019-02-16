@@ -51,13 +51,23 @@ executable image-triangles
   main-is:             Main.hs
 
   -- Modules included in this executable, other than Main.
-  -- other-modules:
+  other-modules: Render, Triangles
 
   -- LANGUAGE extensions used by modules in this package.
   other-extensions:    TupleSections
 
   -- Other library packages from which modules are imported.
-  build-depends:       base, random, hip, colour, diagrams-lib, diagrams-svg, parallel, repa, vector
+  build-depends:       base
+                     , random
+                     , hip
+                     , colour
+                     , diagrams-lib
+                     , diagrams-svg
+                     , parallel
+                     , repa
+                     , vector
+                     , vector-th-unbox
+
 
   -- Directories containing source files.
   hs-source-dirs:      src
@@ -65,3 +75,7 @@ executable image-triangles
   -- Base language which the package is written in.
   default-language:    Haskell2010
   ghc-options: -threaded
+               -rtsopts
+--               -prof
+--               -fexternal-interpreter
+--               -fprof-auto
