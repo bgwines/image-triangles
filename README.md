@@ -31,10 +31,10 @@ run with
 ```
 
 ### todo
-* Confirm diagrams is rendering triangles in the correct places.
-* Cache transformations to the colors library
-* Hip has a map transformation. It also depends on the colours library, does it use it?
-* In addition, hip has interfaces to arrays that support operations like map
-* Check that hip colors are srgb
-* Think about opacity. What if everything was completely opaque? What should we do with areas that aren’t 100% covered at the end?
-* The diagram needs a final bounding box that's the size of the picture that it comes from.
+- [x] Confirm diagrams is rendering triangles in the correct places.
+- [x] Cache transformations to the colors library
+- [x] Hip has a map transformation. It also depends on the colours library, does it use it?
+- [x] In addition, hip has interfaces to arrays that support operations like map
+- [x] Check that hip colors are srgb
+- [ ] Think about opacity. What if everything was completely opaque? What should we do with areas that aren’t 100% covered at the end?
+- [ ] The diagram needs a final bounding box that's the size of the picture that it comes from.
