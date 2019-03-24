@@ -3,13 +3,13 @@
 ![sierra](sierra.png)
 ![result](sierrraResult.jpg)
 
+### to build:
 
 make sure you have nix installed
 ```
 curl https://nixos.org/nix/install | sh
 ```
 
-### to build:
 ```
 nix-build
 
@@ -29,7 +29,7 @@ echo "nix: True" >> ~/.cabal/config
 cabal build
 ```
 
-run with
+#### run with
 ```
 ./dist/build/image-triangles/image-triangles -o output.svg
 ```
