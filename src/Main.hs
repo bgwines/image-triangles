@@ -47,7 +47,7 @@ renderTri image dimensions gen progress = Ren.makeTriangle (Ren.toPointList dime
         
         -- the following should be considered triangle shaders
         -- modify them to your liking, their outputs are expected to be in [0, 1]
-        
+        -- TODO: move these into a separate module
         opacity' = 0.4
         --opacity' = 1 - area
         
