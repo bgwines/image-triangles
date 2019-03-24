@@ -1,4 +1,8 @@
 # image-triangles
+###examples
+![sierra](sierra.png)
+![result](sierrraResult.jpg)
+
 
 make sure you have nix installed
 ```
