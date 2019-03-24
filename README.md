@@ -5,6 +5,15 @@
 
 ### to build:
 
+Examples:
+
+![example1Orig](sierra.jpg)
+![example1result](sierraResult.png)
+![example2Orig](art.png)
+![example2Result](artResult.png)
+
+
+
 make sure you have nix installed
 ```
 curl https://nixos.org/nix/install | sh
