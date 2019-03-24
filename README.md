@@ -1,7 +1,7 @@
 # image-triangles
 ###examples
-![sierra](sierra.png)
-![result](sierrraResult.jpg)
+![sierra](sierra.jpg)
+![result](sierrraResult.png)
 
 ### to build:
 
