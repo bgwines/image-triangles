@@ -1,5 +1,5 @@
 # image-triangles
-###examples
+### examples
 ![example1Orig](sierra.jpg)
 ![example1result](sierraResult.png)
 ![example2Orig](art.png)
