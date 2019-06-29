@@ -27,7 +27,7 @@ defaultOpts  = Options {
                   }
 
 genList :: StdGen -> [StdGen]
-genList = map mkStdGen . randoms
+genList = map snd . iterate (split . fst) . split 
 
 -- CL.rgb might be the wrong fn...
 tosRGB' :: (Ord b, Floating b) => Pixel G.RGB b -> CL.Colour b
@@ -48,10 +48,10 @@ renderTri image dimensions gen progress = Ren.makeTriangle (Ren.toPointList dime
         -- the following should be considered triangle shaders
         -- modify them to your liking, their outputs are expected to be in [0, 1]
         -- TODO: move these into a separate module
-        opacity' = 0.4
-        --opacity' = 1 - area
+        -- opacity' = 0.4
+        opacity' =  0.3 +  ((1 - progress) * 0.5)
         
-        area = max ((progress ** 2) * 0.2) 0.01
+        area = max ((progress ** 2) * 0.2) 0.02
 
 
 
